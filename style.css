@@ -89,3 +89,56 @@ font-weight: 700;
 
 font-style: italic;
 */
+
+
+
+
+/*Generel css for alle sider*/
+* {
+    font-family: futura-pt, sans-serif;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+.eapps-instagram-feed-title {
+    text-transform: uppercase;
+    font-family: futura-pt, sans-serif;
+}
+
+#eapps-instagram-feed-1 < a {
+    display: none !important;
+}
+
+/*Generel css slut*/
+
+
+
+
+
+
+
+
+
+
+/*Om Lene Hansen*/
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 32%;
+    position: relative;
+    height: 0;
+    /*    border: red 1px solid;*/
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+}
+
+
+/*Om Lene Hansen slut*/
