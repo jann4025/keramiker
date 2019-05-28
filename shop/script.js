@@ -11,3 +11,4 @@ $(function () {
     });
 
 });
+document.addEventListener("DOMContentLoaded", start);
