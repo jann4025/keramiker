@@ -98,7 +98,7 @@ font-style: italic;
     font-family: futura-pt, sans-serif;
     margin: 0;
     padding: 0;
-    border: red 1px solid;
+    /*    border: red 1px solid;*/
 }
 
 h1 {
@@ -397,7 +397,59 @@ i {
 
 /*Om Lene Hansen slut*/
 
+/*Galleri*/
 
+.intro {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: left;
+    align-items: center;
+    width: 100%;
+}
+
+
+.intro .tekst {
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    font-size: 1.2rem;
+}
+
+.intro h1 {
+    padding-bottom: 20px;
+}
+
+.intro .billede {
+    width: 100%;
+    max-width: 600px;
+}
+
+.intro img {
+    width: 100%;
+    max-width: 600px;
+}
+
+.galleri {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    padding: 20px;
+    margin: 0px 10px;
+}
+
+.galleri img {
+    width: 100%;
+}
+
+.galleri .billede {
+    width: 420px;
+    height: 420px;
+    overflow: hidden;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+
+/*Galleri slut*/
 
 
 /*Media*/
