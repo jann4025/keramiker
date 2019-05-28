@@ -12,3 +12,20 @@ $(function () {
 
 });
 document.addEventListener("DOMContentLoaded", start);
+
+function start() {
+
+    function visGalleriIndhold() {
+
+    }
+
+    async function getJson() {
+        let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/galleri";
+        let jsonData = await fetch(url);
+        forside = await jsonData.json();
+        visGalleriIndhold();
+    }
+
+    getJson();
+
+}
