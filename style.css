@@ -96,30 +96,240 @@ font-style: italic;
 /*Generel css for alle sider*/
 * {
     font-family: futura-pt, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: red 1px solid;
 }
 
 h1 {
     text-transform: uppercase;
 }
 
-.eapps-instagram-feed-title {
-    text-transform: uppercase;
-    font-family: futura-pt, sans-serif;
+.row {
+    display: grid;
+    justify-items: center;
+
 }
 
-#eapps-instagram-feed-1 < a {
-    display: none !important;
+.desktop-nav {
+    position: fixed;
+    top: 0;
+    padding: 2em;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+}
+
+.desktop-nav a {
+    padding: 5em;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    color: whitesmoke;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    text-align: center;
+    z-index: 999;
+    display: none;
+}
+
+.mobile-nav .inner a {
+    padding: 1.5em;
+}
+
+.mobile-nav .inner {
+    width: 100vw;
+    height: 100vw;
+    display: flex;
+    flex-direction: column;
+    font-size: 200%;
+}
+
+.scroll {
+    background-color: rgba(89, 81, 77, .97);
+    padding: 1.5em !important;
 }
 
 /*Generel css slut*/
 
+/*Forside*/
+.v-header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.container {
+    /*    max-width: 960px;*/
+    margin: auto;
+    text-align: center;
+}
+
+.fullscreen-video-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -2;
+    background-color: rgba(121, 188, 226, 0.5);
+}
+
+.fullscreen-video-wrap video {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.header-overlay {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(89, 81, 77, 0.82);
+    z-index: -1;
+    opacity: 0.55;
+}
+
+.header-content {
+    line-height: 50px;
+}
+
+.header-content h1 {
+    font-size: 4em;
+}
+
+.header-content p {
+    font-size: 2em;
+}
+
+#info-container .content {
+    padding: 5em;
+    padding-top: 10em;
+    padding-bottom: 10em;
+    text-align: center;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+#info-container .content p {
+    font-size: 1.5em;
+    max-width: 1000px;
+}
+
+#kurser-container {
+    width: 100vw;
+    height: 30em;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-image: url();
+    background-size: cover;
+    background-position: center;
+}
+
+#kurser-container .content {
+    width: 70%;
+    height: 100%;
+    color: whitesmoke;
+}
+
+#kurser-container .content .bottom {
+    width: 100%;
+    height: 100%;
+    color: whitesmoke;
+    display: grid;
+    justify-items: center;
+    padding-top: 3em;
+}
+
+#kurser-container .content .bottom img {
+    width: 100%;
+    max-width: 250px;
+}
+
+#kurser-container .content h1 {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+#kurser-container .content p {
+    font-size: 1.4em;
+    font-weight: 400;
+}
+
+#mest-solgte-container .content {
+    text-align: center;
+}
+
+#mest-solgte-container .row {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    /*    grid-template-columns: auto auto auto;*/
+    padding-left: 3em;
+    padding-right: 3em;
+    width: 100vw;
+}
+
+#mest-solgte-container .column img {
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+}
 
 
+#mest-solgte-container .column {
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    overflow: hidden;
+}
 
+#mest-solgte-container .content h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
 
+#flakkebjerg-container {
+    margin-top: 8em;
+    width: 100%;
+    height: 30em;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-image: url();
+    background-size: cover;
+    background-position: center;
+}
 
+#flakkebjerg-container .content {
+    width: 100%;
+    /*    height: 100%;*/
+    color: whitesmoke;
+}
 
+#flakkebjerg-container .content h1 {
+    font-size: 4em;
+    font-weight: 700;
+}
 
+#flakkebjerg-container .content p {
+    font-size: 1.4em;
+    font-weight: 400;
+}
+
+/*Forside slut*/
 
 
 /*Om Lene Hansen*/
@@ -140,5 +350,89 @@ h1 {
 
 }
 
-
 /*Om Lene Hansen slut*/
+
+
+
+
+/*Media*/
+@media only screen and (max-width: 1175px) {
+    .desktop-nav {
+        padding: 1em;
+    }
+
+    .desktop-nav a {
+        padding: 4em;
+    }
+
+}
+
+@media only screen and (max-width: 999px) {
+    .desktop-nav {
+        padding: 1em;
+    }
+
+    .desktop-nav a {
+        padding: 3em;
+    }
+
+}
+
+@media only screen and (max-width: 823px) {
+    .desktop-nav {
+        padding: 1em;
+    }
+
+    .desktop-nav a {
+        padding: 2em;
+    }
+
+}
+
+@media only screen and (max-width: 647px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    #flakkebjerg-container .content h1 {
+        font-size: 3em;
+    }
+
+    #mest-solgte-container .row {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media only screen and (max-width: 376px) {
+    #info-container .content p {
+        font-size: 1.5em;
+        width: 300;
+    }
+
+    #info-container .content {
+        padding: 2em;
+        padding-top: 10em;
+        padding-bottom: 10em;
+    }
+
+    #mest-solgte-container .row {
+        padding: 0;
+        margin: 0;
+    }
+
+    #mest-solgte-container .content img {
+        width: 375px;
+    }
+}
+
+
+
+
+/*Media slut*/
