@@ -266,6 +266,8 @@ h1 {
     font-weight: 400;
 }
 
+
+
 #mest-solgte-container .content {
     text-align: center;
 }
@@ -275,9 +277,11 @@ h1 {
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     /*    grid-template-columns: auto auto auto;*/
+    /*
     padding-left: 3em;
     padding-right: 3em;
-    width: 100vw;
+*/
+    width: 100%;
 }
 
 #mest-solgte-container .column img {
@@ -423,12 +427,16 @@ h1 {
     }
 
     #mest-solgte-container .row {
-        padding: 0;
-        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+        grid-template-columns: 1fr;
+
     }
 
     #mest-solgte-container .content img {
         width: 375px;
+        padding: 0;
+        margin: 0;
     }
 }
 
