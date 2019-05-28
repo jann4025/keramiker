@@ -13,21 +13,45 @@
     <meta property="og:type" content="website">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <style>
-
+        *{border: 1px red solid;}
 .splash-content {
         display: grid;
         justify-items: center;
         }
+.fullscreen-photo-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -2;
+    background-color: rgba(121, 188, 226, 0.5);
+}
 
+.fullscreen-photo-wrap img {
+    min-width: 100%;
+    min-height: 100%;
+}
 #om-cv-container{
         display: grid;
         padding-top: 100px;
         }
 
-#om-cv-container .om-tekst .cv-tekst{
+#om-cv-container .om-tekst{
             font-size: 1.4em;
             font-weight: 400;
             max-width: 800px;
+            padding-left: 55px;
+    padding-right: 55px;
+        }
+
+#om-cv-container .cv-tekst{
+            font-size: 1.4em;
+            font-weight: 400;
+            max-width: 800px;
+            padding-left: 55px;
+            padding-right: 55px;
         }
 
 #om-cv-container .top {
@@ -36,6 +60,7 @@
 
 #om-cv-container .bottom {
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    padding-top: 150px;
 /*    grid-area: */
 
         }
@@ -43,7 +68,7 @@
 #om-cv-container img{
             height: 100%;
             width: 100%;
-            max-width: 500px;
+            max-width: 600px;
         }
 
 #kontakt-container {
@@ -87,10 +112,14 @@
     <!--Main container-->
     <main>
        <section id="splash-container">
-
-                <div class="om-header-overlay"></div>
+                         <div class="v-header container">
+<div class="fullscreen-photo-wrap">
+                <img src="" alt="">
+                             </div>
+                <div class="header-overlay"></div>
                 <div class="header-content">
                     <div class="splash-content"></div>
+                </div>
                 </div>
         </section>
         <section id="om-cv-container">
