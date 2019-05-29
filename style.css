@@ -432,9 +432,7 @@ i {
 
 .galleri {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-    padding: 20px;
-    margin: 0px 10px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .galleri img {
@@ -442,8 +440,8 @@ i {
 }
 
 .galleri .billede {
-    width: 420px;
-    height: 420px;
+    width: 320px;
+    height: 500px;
     overflow: hidden;
     padding: 20px;
     margin-bottom: 40px;
