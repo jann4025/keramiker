@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <style>
 /*        *{border: 1px red solid;}*/
-
+        * {box-sizing: border-box;}
         .splash-content {
         display: grid;
         justify-items: center;
@@ -44,7 +44,8 @@
             font-weight: 400;
             max-width: 800px;
             padding-left: 55px;
-    padding-right: 55px;
+            padding-right: 55px;
+    line-height: 1.6;
         }
 
 #om-cv-container .cv-tekst{
@@ -77,9 +78,6 @@
         align-items: center;
         }
 
-        .cv tekst p{
-            font-family: futura-pt, sans-serif;
-        }
         .cv-tekst ul{
             list-style: none;
             line-height: 2;
@@ -88,7 +86,51 @@
 #kontakt-container {
         display: grid;
         justify-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
         }
+
+#kontakt-container h1{
+        font-size: 2.6em;
+        }
+
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=text] {
+padding: 24px 305px;
+    margin-bottom: 12px;
+  border: 2px solid #262420;
+  resize: vertical;
+  }
+
+ textarea {
+padding: 80px 250px;
+  border: 2px solid #262420;
+  resize: vertical;
+
+}
+        input[type=submit] {
+  background-color: #59514d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #262420;
+}
+
+@media screen and (max-width: 600px) {
+  input[type=text], textarea, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
 
     </style>
 </head>
@@ -162,13 +204,19 @@
             <p></p>
 
             <form action="">
+
                 <label for="navn">NAVN</label><br>
                 <input type="text" id="navn" name="navn"> <br>
-                <label for="email">EMAIL</label> <br>
+
+                    <label for="email">EMAIL</label> <br>
+
                 <input type="text" id="email" name="email"><br>
+
+
                 <label for="besked">BESKED</label> <br>
                 <textarea name="besked" id="besked" cols="40" rows="5"></textarea> <br>
                 <input type="submit" value="SEND">
+
             </form>
         </section>
         <div class="map-responsive">
