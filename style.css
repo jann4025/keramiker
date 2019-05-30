@@ -401,10 +401,11 @@ i {
 
 .intro {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     text-align: left;
     align-items: center;
     width: 100%;
+    padding-top: 100px;
 }
 
 
@@ -431,7 +432,7 @@ i {
 
 .galleri {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
     padding: 20px;
     margin: 0px 10px;
 }
@@ -453,6 +454,38 @@ i {
 
 
 /*Media*/
+
+@media only screen and (max-width: 1400px) {
+    .galleri .billede {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media only screen and (max-width: 1319px) {
+    .galleri .billede {
+        width: 450px;
+        height: 450px;
+    }
+}
+
+
+@media only screen and (max-width: 1250px) {
+    .intro {
+        padding: 100px 20px 0px;
+    }
+
+    .intro img {
+        width: 550px;
+    }
+
+    .intro p {
+        width: 500px;
+
+    }
+}
+
+
 @media only screen and (max-width: 1175px) {
     .desktop-nav {
         padding: 1em;
@@ -461,8 +494,9 @@ i {
     .desktop-nav a {
         padding: 4em;
     }
-
 }
+
+@media only screen and (max-width: 1024px) {}
 
 @media only screen and (max-width: 999px) {
     .desktop-nav {
@@ -471,6 +505,21 @@ i {
 
     .desktop-nav a {
         padding: 3em;
+    }
+
+}
+
+@media only screen and (max-width: 959px) {
+
+    .intro {
+        margin: 20px;
+    }
+
+    .galleri {}
+
+    .galleri .billede {
+        width: 300px;
+        height: 300px;
     }
 
 }
@@ -486,82 +535,87 @@ i {
 
 }
 
-@media only screen and (max-width: 658px) {
-    .desktop-nav {
-        display: none;
+@media only screen and (max-width: 768px) {
+    .intro {
+        grid-template-columns: auto;
     }
 
-    .mobile-nav {
-        display: flex;
+    @media only screen and (max-width: 658px) {
+        .desktop-nav {
+            display: none;
+        }
+
+        .mobile-nav {
+            display: flex;
+        }
+
+        .knap {
+            display: block;
+        }
     }
 
-    .knap {
-        display: block;
-    }
-}
+    @media only screen and (max-width: 426px) {
+        #flakkebjerg-container .content h1 {
+            font-size: 3em;
+        }
 
-@media only screen and (max-width: 426px) {
-    #flakkebjerg-container .content h1 {
-        font-size: 3em;
-    }
-
-    #mest-solgte-container .row {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-@media only screen and (max-width: 376px) {
-    #info-container .content p {
-        font-size: 1.5em;
-        width: 300;
+        #mest-solgte-container .row {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 
-    #info-container .content {
-        padding: 2em;
-        padding-top: 10em;
-        padding-bottom: 10em;
+    @media only screen and (max-width: 376px) {
+        #info-container .content p {
+            font-size: 1.5em;
+            width: 300;
+        }
+
+        #info-container .content {
+            padding: 2em;
+            padding-top: 10em;
+            padding-bottom: 10em;
+        }
+
+        #mest-solgte-container .row {
+            padding-left: 0;
+            padding-right: 0;
+            grid-template-columns: 1fr;
+
+        }
+
+        #mest-solgte-container .content img {
+            width: 375px;
+            padding: 0;
+            margin: 0;
+        }
     }
 
-    #mest-solgte-container .row {
-        padding-left: 0;
-        padding-right: 0;
-        grid-template-columns: 1fr;
 
+    @media only screen and (max-width: 321px) {
+        .header-content h1 {
+            font-size: 3em;
+        }
+
+        .header-content p {
+            font-size: 2em;
+        }
+
+        #mest-solgte-container .row {
+            padding-left: 0;
+            padding-right: 0;
+            grid-template-columns: 1fr;
+
+        }
+
+        #mest-solgte-container .content img {
+            width: 320px;
+            padding: 0;
+            margin: 0;
+        }
     }
 
-    #mest-solgte-container .content img {
-        width: 375px;
-        padding: 0;
-        margin: 0;
-    }
-}
-
-
-@media only screen and (max-width: 321px) {
-    .header-content h1 {
-        font-size: 3em;
-    }
-
-    .header-content p {
-        font-size: 2em;
-    }
-
-    #mest-solgte-container .row {
-        padding-left: 0;
-        padding-right: 0;
-        grid-template-columns: 1fr;
-
-    }
-
-    #mest-solgte-container .content img {
-        width: 320px;
-        padding: 0;
-        margin: 0;
-    }
-}
 
 
 
-
-/*Media slut*/
+    /*Media slut*/
