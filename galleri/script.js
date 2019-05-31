@@ -16,6 +16,16 @@ let galleri = [];
 
 function start() {
 
+    document.querySelector(".uil-bars").addEventListener("click", visMenu);
+
+    function visMenu() {
+        console.log("nej");
+        document.querySelector(".mobile-nav").classList.toggle("hide-mobile-nav");
+        document.querySelector(".uil").classList.toggle("fa-bars");
+        document.querySelector(".uil").classList.toggle("uil-multiply");
+        document.querySelector(".uil-multiply").addEventListener("click", visMenu);
+    }
+
     function visGalleriIndhold() {
         console.log(galleri);
         let gal = "";
