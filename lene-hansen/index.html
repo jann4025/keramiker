@@ -74,8 +74,8 @@
         }
 
         .cv-tekst {
-        display: flex;
-        align-items: center;
+        display: grid;
+        justify-items: center;
         }
 
         .cv-tekst ul{
@@ -93,12 +93,6 @@
 #kontakt-container h1{
         font-size: 2.6em;
         }
-
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
 
 input[type=text] {
 padding: 24px 305px;
@@ -206,15 +200,15 @@ input[type=submit]:hover {
             <form action="">
 
                 <label for="navn">NAVN</label><br>
-                <input type="text" id="navn" name="navn"> <br>
+                <input type="text" id="navn" name="navn" placeholder="Navn..."> <br>
 
                     <label for="email">EMAIL</label> <br>
 
-                <input type="text" id="email" name="email"><br>
+                <input type="text" id="email" name="email" placeholder="E-mail..."><br>
 
 
                 <label for="besked">BESKED</label> <br>
-                <textarea name="besked" id="besked" cols="40" rows="5"></textarea> <br>
+                <textarea name="besked" id="besked" cols="40" rows="5" placeholder="Besked..."></textarea> <br>
                 <input type="submit" value="SEND">
 
             </form>
