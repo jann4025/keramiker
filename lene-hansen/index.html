@@ -15,9 +15,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v0.0.4/css/unicons.css">
     <style>
-    *{
-        border: none;
-        }
 
         .splash-content {
         display: grid;
@@ -92,7 +89,7 @@
         }
 
         .cv-tekst ul{
-            list-style: none;
+            list-style: ;
             line-height: 2;
 
         }
@@ -114,22 +111,31 @@ label {
 }
 
 input[type=text] {
-padding: 24px 305px;
+    width: 500px;
+    height: 40px;
+    padding: 10px;
     margin-bottom: 12px;
   border: 2px solid #262420;
   resize: vertical;
+    font-size: 1em;
   }
 
  textarea {
-padding: 80px 250px;
+     width: 500px;
+     height: 200px;
   border: 2px solid #262420;
   resize: vertical;
+     padding: 10px;
+     font-size: 1em;
 
 }
         input[type=submit] {
   background-color: #59514d;
   color: white;
-  padding: 12px 20px;
+            width: 150px;
+            height: 40px;
+            font-size: 1em;
+/*  padding: 12px 20px;*/
   border: none;
   cursor: pointer;
 }
@@ -139,7 +145,7 @@ input[type=submit]:hover {
 }
 
 @media screen and (max-width: 600px) {
-  input[type=text], textarea, input[type=submit] {
+  input[type=text], textarea {
     width: 100%;
     margin-top: 0;
   }
