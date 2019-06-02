@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keramiker Lene Hansen</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://use.typekit.net/tsq8cuj.css">
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v0.0.4/css/unicons.css">
     <style>
+<<<<<<< HEAD
         /*        *{border: 1px red solid;}*/
         * {
             box-sizing: border-box;
@@ -25,10 +26,13 @@
             justify-items: center;
 
         }
+=======
 
         .splash-content {
-            display: grid;
-            justify-items: center;
+        display: grid;
+        justify-items: center;
+>>>>>>> 2a1d1286a9149c6c25613489c991895bb7c7224d
+
         }
 
         .fullscreen-photo-wrap {
@@ -58,7 +62,10 @@
             max-width: 800px;
             padding-left: 55px;
             padding-right: 55px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2a1d1286a9149c6c25613489c991895bb7c7224d
             line-height: 1.6;
 
         }
@@ -94,12 +101,21 @@
         }
 
         .cv-tekst {
+<<<<<<< HEAD
             display: flex;
             align-items: center;
         }
 
         .cv-tekst ul {
             list-style: none;
+=======
+        display: grid;
+        justify-items: center;
+        }
+
+        .cv-tekst ul{
+            list-style: ;
+>>>>>>> 2a1d1286a9149c6c25613489c991895bb7c7224d
             line-height: 2;
 
         }
@@ -128,14 +144,35 @@
             resize: vertical;
         }
 
+<<<<<<< HEAD
         textarea {
             padding: 80px 250px;
             border: 2px solid #262420;
             resize: vertical;
 
         }
+=======
+input[type=text] {
+    width: 500px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 12px;
+  border: 2px solid #262420;
+  resize: vertical;
+    font-size: 1em;
+  }
+
+ textarea {
+     width: 500px;
+     height: 200px;
+  border: 2px solid #262420;
+  resize: vertical;
+     padding: 10px;
+     font-size: 1em;
+>>>>>>> 2a1d1286a9149c6c25613489c991895bb7c7224d
 
         input[type=submit] {
+<<<<<<< HEAD
             background-color: #59514d;
             color: white;
             padding: 12px 20px;
@@ -157,6 +194,28 @@
             }
         }
 
+=======
+  background-color: #59514d;
+  color: white;
+            width: 150px;
+            height: 40px;
+            font-size: 1em;
+/*  padding: 12px 20px;*/
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #262420;
+}
+
+@media screen and (max-width: 600px) {
+  input[type=text], textarea {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+>>>>>>> 2a1d1286a9149c6c25613489c991895bb7c7224d
     </style>
 </head>
 
@@ -231,15 +290,15 @@
             <form action="">
 
                 <label for="navn">NAVN</label><br>
-                <input type="text" id="navn" name="navn"> <br>
+                <input type="text" id="navn" name="navn" placeholder="Navn..."> <br>
 
                 <label for="email">EMAIL</label> <br>
 
-                <input type="text" id="email" name="email"><br>
+                <input type="text" id="email" name="email" placeholder="E-mail..."><br>
 
 
                 <label for="besked">BESKED</label> <br>
-                <textarea name="besked" id="besked" cols="40" rows="5"></textarea> <br>
+                <textarea name="besked" id="besked" cols="40" rows="5" placeholder="Besked..."></textarea> <br>
                 <input type="submit" value="SEND">
 
             </form>
