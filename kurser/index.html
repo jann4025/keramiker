@@ -38,32 +38,51 @@
         }
 
         .billede {
-              width: 100vw;
-    height: 30em;
-    display: grid;
-    justify-items: center;
-    background-size: cover;
-    background-position: center center;
+            width: 100vw;
+            height: 30em;
+            display: grid;
+            justify-items: center;
+            background-size: cover;
+            background-position: center center;
             background-attachment: fixed;
         }
 
-        .beskrivelse2{
-           max-width: 1000px;
-    margin: 0 auto;
-    padding: 10px;
-    font-size: 1.5em;
+        .beskrivelse2 {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 10px;
+            font-size: 1.5em;
             padding-top: 10%;
             color: whitesmoke;
         }
 
         .kurser {}
 
+        #underside-splash-container {
+            height: 70vh;
+        }
+
+        .underside-header-overlay {
+            height: 70vh;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(89, 81, 77, 0.82);
+            z-index: -1;
+            opacity: 0.55;
+        }
+
+        .underside-splash-content {
+            height: 35vh;
+        }
+
         .fullscreen-photo-wrap {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh;
+            height: 70vh;
             overflow: hidden;
             z-index: -2;
             background-color: rgba(121, 188, 226, 0.5);
@@ -74,7 +93,7 @@
             min-height: 100%;
         }
 
-        .tilmelding{
+        .tilmelding {
             grid-gap: 70px;
             max-width: 1000px;
             margin: 0 auto;
@@ -89,7 +108,7 @@
             margin: 0 auto;
         }
 
-        form{
+        form {
             text-align: center;
         }
 
@@ -105,35 +124,34 @@
             resize: vertical;
         }
 
-<<<<<<< HEAD
         textarea {
             padding: 80px 250px;
             border: 2px solid #262420;
             resize: vertical;
 
         }
-=======
-input[type=text] {
-    width: 500px;
-    height: 40px;
-    padding: 10px;
-    margin-bottom: 12px;
-  border: 2px solid #262420;
-  resize: vertical;
-    font-size: 1em;
-  }
 
- textarea {
-     width: 500px;
-     height: 200px;
-  border: 2px solid #262420;
-  resize: vertical;
-     padding: 10px;
-     font-size: 1em;
->>>>>>> 2a1d1286a9149c6c25613489c991895bb7c7224d
+        input[type=text] {
+            width: 500px;
+            height: 40px;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 2px solid #262420;
+            resize: vertical;
+            font-size: 1em;
+        }
+
+        textarea {
+            width: 500px;
+            height: 200px;
+            border: 2px solid #262420;
+            resize: vertical;
+            padding: 10px;
+            font-size: 1em;
+
+        }
 
         input[type=submit] {
-<<<<<<< HEAD
             background-color: #59514d;
             color: white;
             padding: 12px 20px;
@@ -154,6 +172,29 @@ input[type=text] {
                 margin-top: 0;
             }
         }
+
+        background-color: #59514d;
+        color: white;
+        width: 150px;
+        height: 40px;
+        font-size: 1em;
+        /*  padding: 12px 20px;*/
+        border: none;
+        cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #262420;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            input[type=text],
+            textarea {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
     </style>
 </head>
 
@@ -162,11 +203,11 @@ input[type=text] {
         <!--Desktop navigation skjules på mobile (breakpoint: max 700px)-->
         <nav class="desktop-nav">
             <img src="" alt="">
-            <a href="">FORSIDE</a>
-            <a href="">SHOP</a>
-            <a href="">GALLERI</a>
-            <a href="">KURSER</a>
-            <a href="">OM</a>
+            <a href="../index.html">FORSIDE</a>
+            <a href="../shop">SHOP</a>
+            <a href="../galleri">GALLERI</a>
+            <a href="#">KURSER</a>
+            <a href="../lene-hansen/">OM</a>
         </nav>
         <!--Mobil navigation skjules på desktop (breakpoint: 700px)-->
 
@@ -177,11 +218,11 @@ input[type=text] {
         <nav class="mobile-nav hide-mobile-nav">
             <div class="inner">
                 <img src="" alt="">
-                <a href="">FORSIDE</a>
-                <a href="">SHOP</a>
-                <a href="">GALLERI</a>
-                <a href="">KURSER</a>
-                <a href="">OM</a>
+                <a href="../index.html">FORSIDE</a>
+                <a href="../shop">SHOP</a>
+                <a href="../galleri">GALLERI</a>
+                <a href="#">KURSER</a>
+                <a href="../lene-hansen/">OM</a>
             </div>
         </nav>
     </header>
@@ -189,19 +230,18 @@ input[type=text] {
     <!--Main container-->
     <main>
 
-        <section id="splash-container">
+        <section id="underside-splash-container">
             <div class="v-header container">
                 <div class="fullscreen-photo-wrap">
                     <img src="https://www.keramiker.dk/upl/website/shop11/IMG20181124111545_srcset-large.jpg" alt=""></div>
-                <div class="header-overlay"></div>
+                <div class="underside-header-overlay"></div>
                 <div class="header-content">
-                    <div class="splash-content">
-                        <h1>Kurser</h1>
+                    <div class="underside-splash-content">
+                        <h1>KURSER</h1>
                     </div>
                 </div>
             </div>
         </section>
-
         <div class="kurser-container">
 
         </div>
