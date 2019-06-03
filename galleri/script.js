@@ -12,8 +12,12 @@ $(function () {
 
 });
 document.addEventListener("DOMContentLoaded", start);
-let galleri = [];
-let galleriPics = {};
+let vaerkstedet;
+let vaerkstedetGalleri = {};
+let brugskunst;
+let brugskunstGalleri = {};
+
+
 
 function start() {
 
@@ -27,51 +31,73 @@ function start() {
         document.querySelector(".uil-multiply").addEventListener("click", visMenu);
     }
 
-    function visGalleriIndhold() {
-        console.log(galleri);
-        let gal = "";
-        let dest = document.querySelector(".container-galleri");
-        let temp = document.querySelector("template");
-        galleri.forEach(galleri => {
-            let klon = temp.cloneNode(true).content;
-            klon.querySelector("h1").innerHTML = galleri.title.rendered;
-            klon.querySelector("p").innerHTML = galleri.tekst;
-            klon.querySelector(".billede img").src = galleri.billede.guid;
 
 
+    function visVaerkstedsIndhold() {
+        console.log(vaerkstedetGalleri);
+        document.querySelector(".container-galleri-vaerkstedet h1").innerHTML = vaerkstedet.title.rendered;
+        document.querySelector(".container-galleri-vaerkstedet p").innerHTML = vaerkstedet.tekst;
+        document.querySelector(".container-galleri-vaerkstedet .billede img").src = vaerkstedet.billede.guid;
+    }
 
 
-
-            //            klon.querySelector(".galleri").innerHTML = galleri.galleri_billeder;
-
-            galleriPics.forEach(img => {
-                gal = `<div class="billede">
-                <img src="${galleriPics.media_details.sizes.medium.source_url}" alt="">
-            </div>`;
-            });
-            klon.querySelector(".galleri").innerHTML = gal;
-            console.log(gal);
-            dest.appendChild(klon);
+    function visVaerkstedGalleri() {
+        vaerkstedetGalleri.forEach(galleri => {
+            document.querySelector(".container-galleri-vaerkstedet .galleri").innerHTML += `<div class="billede"><img src="${galleri.media_details.sizes.medium.source_url}" alt=""></div>`;
         });
     }
 
-    async function getJson() {
-        let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/galleri";
-        let jsonData = await fetch(url);
-        galleri = await jsonData.json();
-        visGalleriIndhold();
+
+    function visBrugsKunstIndhold() {
+
+        document.querySelector(".container-galleri-brugskunst h1").innerHTML = brugskunst.title.rendered;
+        document.querySelector(".container-galleri-brugskunst p").innerHTML = brugskunst.tekst;
+        document.querySelector(".container-galleri-brugskunst .billede img").src = brugskunst.billede.guid;
     }
 
-    getJson();
-
-    async function getJsonGalleri() {
-        let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/media?parent=108";
-        let jsonData = await fetch(url);
-        galleriPics = await jsonData.json();
-        visGalleriIndhold();
+    function visBrugsKunstGalleri() {
+        console.log("hej");
+        brugskunstGalleri.forEach(galleri => {
+            document.querySelector(".container-galleri-brugskunst .galleri").innerHTML += `<div class="billede"><img src="${galleri.media_details.sizes.medium.source_url}" alt=""></div>`;
+        });
     }
 
-    getJsonGalleri();
+    async function getJsonvaerkstedet() {
+        let url1 = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/galleri/108";
+        let jsonData = await fetch(url1);
+        vaerkstedet = await jsonData.json();
+        visVaerkstedsIndhold();
+    }
+
+    getJsonvaerkstedet();
+
+    async function getJsonGallerivaerkstedet() {
+        let url2 = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/media?parent=108";
+        let jsonData = await fetch(url2);
+        vaerkstedetGalleri = await jsonData.json();
+        visVaerkstedGalleri();
+    }
+
+    getJsonGallerivaerkstedet();
+
+    async function getJsonBrugsKunst() {
+        let url3 = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/galleri/107";
+        let jsonData = await fetch(url3);
+        brugskunst = await jsonData.json();
+        visBrugsKunstIndhold();
+    }
+
+    getJsonBrugsKunst();
+
+    async function getJsonGalleriBrugsKunst() {
+        console.log("hej")
+        let url4 = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/media?parent=107";
+        let jsonData = await fetch(url4);
+        brugskunstGalleri = await jsonData.json();
+        visBrugsKunstGalleri();
+    }
+
+    getJsonGalleriBrugsKunst();
 
 
 }

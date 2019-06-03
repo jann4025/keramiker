@@ -28,8 +28,8 @@ function start() {
 
     function visOmIndhold() {
         om.forEach(om => {
-document.querySelector("#splash-container img").src = om.splash.guid;
-            document.querySelector(".splash-content").innerHTML = om.overskrift;
+            document.querySelector("#underside-splash-container img").src = om.splash.guid;
+            document.querySelector(".underside-splash-content").innerHTML = om.overskrift;
             document.querySelector(".om-billede img").src = om.billede_om.guid;
             document.querySelector(".om-tekst").innerHTML = om.tekst;
             document.querySelector(".cv-tekst p").innerHTML = om.cv;
