@@ -179,6 +179,7 @@ i {
 .hide-mobile-nav {
     opacity: 0;
     transition: .3s;
+    display: none;
 }
 
 
