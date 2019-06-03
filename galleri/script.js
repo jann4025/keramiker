@@ -13,6 +13,7 @@ $(function () {
 });
 document.addEventListener("DOMContentLoaded", start);
 let galleri = [];
+let galleriPics = {};
 
 function start() {
 
@@ -36,15 +37,18 @@ function start() {
             klon.querySelector("h1").innerHTML = galleri.title.rendered;
             klon.querySelector("p").innerHTML = galleri.tekst;
             klon.querySelector(".billede img").src = galleri.billede.guid;
+
+
+
+
+
             //            klon.querySelector(".galleri").innerHTML = galleri.galleri_billeder;
 
-            let galleriarray = galleri.galleri_billeder;
-
-            galleriarray.forEach(img => {
-                gal += `<div class="billede">
-    <img src="${img.guid}" alt="">
-</div>`;
-            })
+            galleriPics.forEach(img => {
+                gal = `<div class="billede">
+                <img src="${galleriPics.media_details.sizes.medium.source_url}" alt="">
+            </div>`;
+            });
             klon.querySelector(".galleri").innerHTML = gal;
             console.log(gal);
             dest.appendChild(klon);
@@ -59,5 +63,15 @@ function start() {
     }
 
     getJson();
+
+    async function getJsonGalleri() {
+        let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/media?parent=108";
+        let jsonData = await fetch(url);
+        galleriPics = await jsonData.json();
+        visGalleriIndhold();
+    }
+
+    getJsonGalleri();
+
 
 }
