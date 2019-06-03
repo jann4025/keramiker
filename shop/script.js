@@ -64,6 +64,9 @@ function start() {
             klon.querySelector(".pris").innerHTML = produkt.pris;
 
             dest.appendChild(klon);
+            dest.lastElementChild.addEventListener("click", () => {
+                location.href = "produkt.html?titel=" + produkt.title.rendered;
+            })
         })
 
     }
@@ -77,5 +80,6 @@ function start() {
     }
 
     getJson();
+
 
 }

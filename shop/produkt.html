@@ -123,44 +123,23 @@
             </div>
         </nav>
     </header>
-
-
-    <!--Main container-->
+    <div class="produkt">
+    </div>
+    <template class="temp">
+        <div class="produkt">
+            <img src="" alt="">
+            <h1></h1>
+            <p class="beskrivelse"></p>
+            <p class="pris"></p>
+        </div>
+    </template>
     <main>
 
-        <section id="underside-splash-container">
-            <div class="v-header container">
-                <div class="fullscreen-photo-wrap">
-                    <img src="https://www.keramiker.dk/upl/website/shop11/IMG20181124111545_srcset-large.jpg" alt=""></div>
-                <div class="underside-header-overlay"></div>
-                <div class="header-content">
-                    <div class="underside-splash-content">
-                        <h1>SHOP</h1>
-                    </div>
-                </div>
-            </div>
-        </section>
 
 
-        <div class="produkter-container">
-        </div>
 
-        <template>
-            <div class="produkt">
-                <img src="" alt="">
-                <h1></h1>
-                <p class="beskrivelse"></p>
-                <p class="pris"></p>
-            </div>
-        </template>
-
-        <div class="singleview">
-            <div id="luk"></div>
-            <div id="indhold"></div>
-        </div>
 
     </main>
-
     <footer>
 
         <div class="top">
@@ -188,7 +167,53 @@
         </div>
     </footer>
 
-    <script src="script.js">
+
+    <script>
+        let shop;
+        let urlParams = new URLSearchParams(window.location.search);
+        let titel = urlParams.get("titel");
+        console.log(titel);
+        let dest = document.querySelector(".produkt");
+        let temp = document.querySelector(".temp");
+
+
+        document.addEventListener("DOMContentLoaded", start);
+
+
+
+        function start() {
+            console.log("start");
+
+            async function getJson() {
+                let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/produkter";
+                let jsonData = await fetch(url);
+                shop = await jsonData.json();
+                showProduct();
+            }
+
+
+
+            function showProduct() {
+                console.log(shop);
+                dest.innerHTML = "";
+
+                shop.forEach(produkt => {
+                    if (produkt.title.rendered == titel) {
+                        let klon = temp.cloneNode(true).content;
+                        klon.querySelector(".produkt h1").innerHTML = produkt.title.rendered;
+                        klon.querySelector(".produkt img").src = produkt.billede.guid;
+                        klon.querySelector(".beskrivelse").innerHTML = produkt.beskrivelse;
+                        klon.querySelector(".pris").innerHTML = produkt.pris;
+
+                        dest.appendChild(klon);
+                    }
+                })
+
+            }
+
+            getJson();
+        }
+
     </script>
 </body>
 
