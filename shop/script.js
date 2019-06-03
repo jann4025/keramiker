@@ -60,7 +60,7 @@ function start() {
 
             klon.querySelector(".produkt h1").innerHTML = produkt.title.rendered;
             klon.querySelector(".produkt img").src = produkt.billede.guid;
-            klon.querySelector(".beskrivelse").innerHTML = produkt.beskrivelse;
+
             klon.querySelector(".pris").innerHTML = produkt.pris;
 
             dest.appendChild(klon);

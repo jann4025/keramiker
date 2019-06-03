@@ -15,27 +15,41 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v0.0.4/css/unicons.css">
     <style>
-        .produkter-container {
-            max-width: 1200px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            padding-bottom: 50px;
-            margin: 100px auto;
-            grid-gap: 50px;
+        .put {
+            width: 100px;
+            height: 50px;
+            align-items: baseline;
+        }
 
+        .singleview {
+            margin-top: 150px;
+        }
+
+        .tekst {
+            align-items: baseline;
         }
 
         .produkt {
-            margin-bottom: 50px
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-items: center;
         }
 
         .produkt h1 {
-            font-size: 25px;
+            font-size: 50px;
+        }
+
+        .pris {
+            margin-top: 50px;
+            font-size: 1.2em;
+
         }
 
         .produkt img {
-            max-height: 300px;
-            max-width: 350px;
+            max-height: 600px;
+            max-width: 400px;
         }
 
         .produkter-container img {
@@ -83,12 +97,12 @@
 
 
         @media only screen and (max-width: 833px) {
-            .produkter-container {
-                grid-template-columns: 1fr 1fr;
-                max-width: 700px;
+            .produkt {
+                display: grid;
+                grid-template-columns: 1fr;
+                max-width: 1200px;
                 margin: 0 auto;
-
-
+                justify-items: center;
             }
         }
 
@@ -123,14 +137,19 @@
             </div>
         </nav>
     </header>
-    <div class="produkt">
+    <div class="singleview">
     </div>
     <template class="temp">
         <div class="produkt">
-            <img src="" alt="">
-            <h1></h1>
-            <p class="beskrivelse"></p>
-            <p class="pris"></p>
+            <div class="billede">
+                <img src="" alt="">
+            </div>
+            <div class="tekst">
+                <h1></h1>
+                <p class="beskrivelse"></p>
+                <p class="pris"></p>
+                <button class="put">Læg i kurv</button>
+            </div>
         </div>
     </template>
     <main>
@@ -169,11 +188,39 @@
 
 
     <script>
+        $(function() {
+            var header = $(".desktop-nav");
+
+            $(window).scroll(function() {
+                var scroll = $(window).scrollTop();
+                if (scroll >= 50) {
+                    header.addClass("scroll");
+                } else {
+                    header.removeClass("scroll");
+                }
+            });
+
+        });
+
+
+        document.querySelector(".uil-bars").addEventListener("click", visMenu);
+
+        function visMenu() {
+            console.log("nej");
+            document.querySelector(".mobile-nav").classList.toggle("hide-mobile-nav");
+            document.querySelector(".uil").classList.toggle("fa-bars");
+            document.querySelector(".uil").classList.toggle("uil-multiply");
+            document.querySelector(".uil-multiply").addEventListener("click", visMenu);
+        }
+
+
+
+
         let shop;
         let urlParams = new URLSearchParams(window.location.search);
         let titel = urlParams.get("titel");
         console.log(titel);
-        let dest = document.querySelector(".produkt");
+        let dest = document.querySelector(".singleview");
         let temp = document.querySelector(".temp");
 
 
@@ -203,7 +250,7 @@
                         klon.querySelector(".produkt h1").innerHTML = produkt.title.rendered;
                         klon.querySelector(".produkt img").src = produkt.billede.guid;
                         klon.querySelector(".beskrivelse").innerHTML = produkt.beskrivelse;
-                        klon.querySelector(".pris").innerHTML = produkt.pris;
+                        klon.querySelector(".pris").innerHTML = "Pris: " + produkt.pris;
 
                         dest.appendChild(klon);
                     }
