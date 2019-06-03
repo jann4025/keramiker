@@ -417,6 +417,20 @@ footer.bottom i {
     font-weight: 400;
 }
 
+
+.instagram-container {
+    text-align: center;
+}
+
+.instagram-container h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+
+
 /*Forside slut*/
 
 
