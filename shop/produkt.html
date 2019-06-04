@@ -140,7 +140,6 @@
                 justify-items: center;
             }
         }
-
     </style>
 </head>
 
@@ -243,15 +242,15 @@
 
 
 
-        let shop;
-        let urlParams = new URLSearchParams(window.location.search);
-        let titel = urlParams.get("titel");
-        console.log(titel);
-        let dest = document.querySelector(".singleview");
-        let temp = document.querySelector(".temp");
+        let shop; /* Global variabel */
+        let urlParams = new URLSearchParams(window.location.search); /* Variabel som søger efter den udvalgte overførte URL varibel ud som var titel */
+        let titel = urlParams.get("titel"); /* Henter URL variabel ud fra titel*/
+        console.log(titel); /* Udsrivker titlen på den overførte variabel */
+        let dest = document.querySelector(".singleview"); /* Variabel hvor vi angiver hvor vores inhold skal placeres i html */
+        let temp = document.querySelector(".temp"); /* Varibel hvor vi angiver hvilken template funktionen skal bruge i html */
 
 
-        document.addEventListener("DOMContentLoaded", start);
+        document.addEventListener("DOMContentLoaded", start); /* Tilføjer en Eventlistener som skal sikre at vores html (DOM) er loadet inden vi kalder på start funktionen */
 
 
 
@@ -259,44 +258,43 @@
             console.log("start");
 
 
-            async function getJson() {
-                let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/produkter";
-                let jsonData = await fetch(url);
-                shop = await jsonData.json();
-                showProduct();
+            async function getJson() { /* Async funktion som henter vores JSON ned */
+                let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/produkter"; /* En variabel med et link som indeholder vores indhold fra en json side */
+                let jsonData = await fetch(url); /* Variabel som henter vores JSON indhold ned fra vores url variabl */
+                shop = await jsonData.json(); /* Henter vores JSON indhold og putter det ind i vores globale varibel*/
+                showProduct(); /* Kalder funktionen skal vise indholdet  */
             }
 
 
 
-            function showProduct() {
+            function showProduct() { /* Funktion som viser inholdet */
                 console.log(shop);
                 dest.innerHTML = "";
 
-                shop.forEach(produkt => {
-                    if (produkt.title.rendered == titel) {
-                        let klon = temp.cloneNode(true).content;
+                shop.forEach(produkt => { /* Vi laver et loop som læser alt indhold som er inde i vores globale variabel*/
+                    if (produkt.title.rendered == titel) { /* Hvis tilten er den samme i den globale variabel og den overførte variabel skal den gøre dette */
+                        let klon = temp.cloneNode(true).content; /*Variabel som siger at kloning af template taggets indhold sker */
                         klon.querySelector(".produkt h1").innerHTML = produkt.title.rendered;
                         klon.querySelector(".produkt img").src = produkt.billede.guid;
                         klon.querySelector(".beskrivelse").innerHTML = produkt.beskrivelse;
                         klon.querySelector(".pris").innerHTML = "Pris: " + produkt.pris + (" ,-");
 
-                        dest.appendChild(klon);
+                        dest.appendChild(klon); /* Tilføj klonen til dest varialben (main variablen) */
                     }
                 })
 
             }
 
 
-            getJson();
-            back();
+            getJson(); /* Kalder funktionen som skal hente vores indhold */
+            back(); /* Kalder tage os tilbage til den side man kom fra */
         }
 
         function back() {
-            document.querySelector(".luk").addEventListener("click", () => {
+            document.querySelector(".luk").addEventListener("click", () => { /* Tilføjer en eventlistner der lytter på et click, hvorefter man bliver taget til den skrevne lokation */
                 location.href = "index.html#hertil";
             })
         }
-
     </script>
 </body>
 

@@ -26,18 +26,9 @@ $(function () {
     });
 
 });
-let info = [];
-let shop = [];
-document.addEventListener("DOMContentLoaded", start);
-
-function fadeIn() {
-    document.querySelector(".se_mere").style.display = "block";
-    document.querySelector(".se_mere").style.zIndex = "99";
-}
-
-function fadeOut() {
-    document.querySelector(".se_mere").style.display = "none";
-}
+let info = []; /* Variabel med et tomt array*/
+let shop = []; /* Variabel med et tomt array*/
+document.addEventListener("DOMContentLoaded", start); /* Tilføjer en Eventlistener som skal sikre at vores html (DOM) er loadet inden vi kalder på start funktionen */
 
 
 function start() {
@@ -72,8 +63,8 @@ function start() {
             klon.querySelector(".pris").innerHTML = produkt.pris + (" ,-");
 
             dest.appendChild(klon);
-            dest.lastElementChild.addEventListener("click", () => {
-                location.href = "produkt.html?titel=" + produkt.title.rendered;
+            dest.lastElementChild.addEventListener("click", () => { /* Vælger det sidste element som kører igennem vores loop og tilføjer en adventlistener der lytter om der bliver klikket på den */
+                location.href = "produkt.html?titel=" + produkt.title.rendered; /*Når der bliver klikket på elementet tager den os til en side ud fra hvilken titel elementet indeholder og overfører variablen til siden*/
             })
         })
 
