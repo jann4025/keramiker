@@ -131,7 +131,7 @@ h1 {
 
 i {
     font-size: 2em;
-    color: whitesmoke;
+    color: black;
     padding-right: .5em;
 
 }
@@ -822,4 +822,8 @@ footer.bottom i {
 
 .desktop-nav a:hover {
     opacity: .6;
+}
+
+.knap i {
+    color: whitesmoke;
 }
