@@ -21,8 +21,8 @@
     <header>
         <!--Desktop navigation skjules på mobile (breakpoint: max 700px)-->
         <nav class="desktop-nav">
-            <img src="" alt="">
-            <a href="#">FORSIDE</a>
+            <a href="index.html" id="logo"><img id="logo" src="lene_white.png" alt=""></a>
+            <!--           <a href="#">FORSIDE</a>-->
             <a href="shop">SHOP</a>
             <a href="galleri">GALLERI</a>
             <a href="kurser">KURSER</a>
@@ -61,17 +61,22 @@
                 <div class="emptyspace"></div>
             </div>
         </section>
-        <section id="info-container" data-aos="fade-right" data-aos-duration="3000">
+        <section id="info-container">
             <div class="content">
-                <p></p>
+                <p class="info_tekst1" data-aos="fade-down" data-aos-duration="1000"></p>
+                <div class="billeder">
+                    <img class="billede1" data-aos="fade-right" data-aos-duration="1000" src="" alt="">
+                    <img class="billede2" data-aos="fade-left" data-aos-duration="1000" src="" alt="">
+                </div>
+                <p class="info_tekst2" data-aos="fade-up" data-aos-duration="1000"></p>
             </div>
         </section>
         <section id="kurser-container">
             <div class="overlay"></div>
             <div class="content">
-                <div class="top" data-aos="fade-left" data-aos-duration="3000">
+                <div class="top" data-aos="fade-left" data-aos-duration="1000">
                 </div>
-                <div class="bottom" data-aos="fade-up" data-aos-duration="3000">
+                <div class="bottom" data-aos="fade-up" data-aos-duration="1000">
                     <a href="kurser"><img src="knap.png" alt=""></a>
                 </div>
             </div>
@@ -81,7 +86,7 @@
                 <h1>Mest solgte</h1>
                 <div class="row">
                     <a href="/shop/produkt.html?titel=Salt%20og%20peber%20kar" style="text-decoration: none;">
-                        <div class="column billede1" data-aos="fade-right" data-aos-duration="2000">
+                        <div class="column billede1" data-aos="fade-right" data-aos-duration="1000">
                             <img src="" alt="">
                         </div>
                         <figcaption style="text-align: left; padding-top:.5em; color: black;">
@@ -90,7 +95,7 @@
                         </figcaption>
                     </a>
                     <a href="shop/produkt.html?titel=Krukker" style="text-decoration: none;">
-                        <div class="column billede2" data-aos="fade-up" data-aos-duration="2000">
+                        <div class="column billede2" data-aos="fade-up" data-aos-duration="1000">
                             <img src="" alt="">
                         </div>
                         <figcaption style="text-align: left; padding-top:.5em; color: black;">
@@ -100,7 +105,7 @@
                     </a>
 
                     <a href="shop/produkt.html?titel=Lysestager" style="text-decoration: none;">
-                        <div class="column billede3" data-aos="fade-left" data-aos-duration="2000">
+                        <div class="column billede3" data-aos="fade-left" data-aos-duration="1000">
                             <img src="" alt="">
                         </div>
                         <figcaption style="text-align: left; padding-top:.5em; color: black;">
@@ -113,7 +118,7 @@
             </div>
         </section>
         <section id="flakkebjerg-container">
-            <div class="content" data-aos="fade-down" data-aos-duration="2000">
+            <div class="content" data-aos="fade-down" data-aos-duration="1000">
             </div>
         </section>
         <section class="instagram-container">
@@ -159,4 +164,6 @@
     <script>
         AOS.init();
     </script>
-</body></html>
+</body>
+
+</html>
