@@ -28,6 +28,10 @@ $(function () {
 });
 let info = [];
 let shop = [];
+let urlParams = new URLSearchParams(window.location.search);
+let sejt = urlParams.get('sejt');
+
+
 document.addEventListener("DOMContentLoaded", start);
 
 function fadeIn() {
@@ -41,9 +45,11 @@ function fadeOut() {
 
 
 function start() {
+    console.log(sejt);
     console.log("start");
-
     document.querySelector(".uil-bars").addEventListener("click", visMenu);
+
+
 
     function visMenu() {
         console.log("nej");
@@ -101,6 +107,4 @@ function start() {
     }
     getInfo();
     getJson();
-
-
 }

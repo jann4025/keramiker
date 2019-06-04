@@ -39,7 +39,7 @@
             text-decoration: underline;
         }
 
-        .put {
+        #put {
             width: 100px;
             height: 50px;
             border-radius: 3px;
@@ -51,7 +51,7 @@
             margin-top: 50px;
         }
 
-        .put:hover {
+        #put:hover {
             background-color: #262420;
             cursor: pointer;
         }
@@ -140,7 +140,6 @@
                 justify-items: center;
             }
         }
-
     </style>
 </head>
 
@@ -148,23 +147,30 @@
     <header>
         <!--Desktop navigation skjules på mobile (breakpoint: max 700px)-->
         <nav class="desktop-nav scroll">
-            <img src="" alt="">
-            <a href="../index.html">FORSIDE</a>
+            <a href="../index.html" id="logo"><img id="logo" src="../lene_white.png" alt=""></a>
+            <!--           <a href="#">FORSIDE</a>-->
             <a href="index.html">SHOP</a>
             <a href="../galleri">GALLERI</a>
             <a href="../kurser">KURSER</a>
             <a href="../lene-hansen">OM</a>
+            <a href="" id="kurv">
+                <img src="../hvid_kurv.svg" id="kurv" alt="">
+                <span id="kurv1"></span>
+
+            </a>
         </nav>
         <!--Mobil navigation skjules på desktop (breakpoint: 700px)-->
 
-        <div class="knap">
+        <div class=" knap">
             <i class='uil uil-bars'></i>
+            <a href="index.html" id="logonav"><img id="logonav" src="../lene_white.png" alt=""></a>
+            <img src="../hvid_kurv.svg" class="kurv" alt="">
         </div>
 
         <nav class="mobile-nav hide-mobile-nav">
             <div class="inner">
                 <img src="" alt="">
-                <a href="../index.html">FORSIDE</a>
+                <a href="../">FORSIDE</a>
                 <a href="index.html">SHOP</a>
                 <a href="../galleri">GALLERI</a>
                 <a href="../kurser">KURSER</a>
@@ -172,6 +178,7 @@
             </div>
         </nav>
     </header>
+
 
     <div class="singleview">
 
@@ -190,7 +197,7 @@
                 <h1></h1>
                 <p class="beskrivelse"></p>
                 <p class="pris"></p>
-                <button class="put">Læg i kurv</button>
+                <button id="put">Læg i kurv</button>
             </div>
         </div>
     </template>
@@ -229,6 +236,7 @@
     </footer>
 
 
+
     <script>
         document.querySelector(".uil-bars").addEventListener("click", visMenu);
 
@@ -249,15 +257,22 @@
         console.log(titel);
         let dest = document.querySelector(".singleview");
         let temp = document.querySelector(".temp");
+        let sejt = 1;
 
 
         document.addEventListener("DOMContentLoaded", start);
 
 
 
+
+
         function start() {
             console.log("start");
 
+            if (sejt > 1) {
+                document.querySelector("#kurv1").style.display = "block"
+            }
+            document.querySelector("#kurv1").innerHTML = sejt;
 
             async function getJson() {
                 let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/produkter";
@@ -282,22 +297,37 @@
 
                         dest.appendChild(klon);
                     }
-                })
+
+                });
+
+
+//                document.querySelector("#put").addEventListener("click", KurvAdd);
+
+            }
+
+
+
+            function KurvAdd() {
+                sejt++;
+                console.log(sejt);
+                document.querySelector("#kurv1").style.display = "block";
+                document.querySelector("#kurv1").innerHTML = sejt;
+
+
 
             }
 
 
             getJson();
             back();
-        }
 
-        function back() {
-            document.querySelector(".luk").addEventListener("click", () => {
-                location.href = "index.html#hertil";
-            })
-        }
+            function back() {
+                document.querySelector(".luk").addEventListener("click", () => {
+                    location.href = "index.html#hertil?sejt=" + sejt;
+                })
+            }
 
+        }
     </script>
-</body>
 
-</html>
+</body></html>
