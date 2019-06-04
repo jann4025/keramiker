@@ -32,7 +32,10 @@ function start() {
         forside.forEach(forside => {
             document.querySelector("video").src = forside.baggrunds_video.guid;
             document.querySelector(".header-content").innerHTML = forside.velkommen_tekst;
-            document.querySelector("#info-container .content p").innerHTML = forside.intro_tekst;
+            document.querySelector("#info-container .info_tekst1").innerHTML = forside.intro_tekst;
+            document.querySelector("#info-container .info_tekst2").innerHTML = forside.beskrivelse_tekst;
+            document.querySelector("#info-container .billede1").src = forside.intro_billede1.guid;
+            document.querySelector("#info-container .billede2").src = forside.intro_billede2.guid;
             document.querySelector("#kurser-container").style.backgroundImage = `url('${forside.kurser_billeder.guid}')`;
             document.querySelector("#kurser-container .content .top").innerHTML = forside.kurser_teskt;
             document.querySelector("#mest-solgte-container .billede1 img").src = forside.mest_solgt_billede_et.guid;
