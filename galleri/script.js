@@ -41,7 +41,7 @@ function start() {
 
             console.log(klon)
             indhold.galleri_billeder.forEach(billeder => {
-                klon.querySelector(".galleri").innerHTML += `<div class="billeder"><img src="${billeder.guid}" alt=""></div>`;
+                klon.querySelector(".galleri").innerHTML += `<div class="billeder_galleri"><img src="${billeder.guid}" alt=""></div>`;
             });
             dest.appendChild(klon);
 
