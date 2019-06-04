@@ -15,15 +15,45 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v0.0.4/css/unicons.css">
     <style>
-        .button img {
-            margin-top: 40px;
-            width: 300px;
+        .luk {
+            position: absolute;
+            top: 137px;
+            font-size: 1.2em;
+            width: 90px;
+            padding-left: 50px;
+            font-weight: 700;
+        }
+
+        .luk p {
+            display: inline-block;
+        }
+
+        .pil {
+            font-size: 1.5em;
+            padding: 5px
+        }
+
+        .luk p:hover {
+            color: #59514d;
+            cursor: pointer;
+            text-decoration: underline;
         }
 
         .put {
             width: 100px;
             height: 50px;
-            align-items: baseline;
+            border-radius: 3px;
+            box-shadow: none;
+            background-color: #59514d;
+            color: whitesmoke;
+            font-size: 1.2em;
+            border: none;
+            margin-top: 50px;
+        }
+
+        .put:hover {
+            background-color: #262420;
+            cursor: pointer;
         }
 
         .singleview {
@@ -110,17 +140,16 @@
                 justify-items: center;
             }
         }
-
     </style>
 </head>
 
 <body>
     <header>
         <!--Desktop navigation skjules på mobile (breakpoint: max 700px)-->
-        <nav class="desktop-nav">
+        <nav class="desktop-nav scroll">
             <img src="" alt="">
             <a href="../index.html">FORSIDE</a>
-            <a href="#">SHOP</a>
+            <a href="shop">SHOP</a>
             <a href="../galleri">GALLERI</a>
             <a href="../kurser">KURSER</a>
             <a href="../lene-hansen">OM</a>
@@ -142,9 +171,16 @@
             </div>
         </nav>
     </header>
+
     <div class="singleview">
+
+    </div>
+    <div class="luk">
+        <p class="pil">&#8249;</p>
+        <p>Tilbage</p>
     </div>
     <template class="temp">
+
         <div class="produkt">
             <div class="billede">
                 <img src="" alt="">
@@ -153,9 +189,7 @@
                 <h1></h1>
                 <p class="beskrivelse"></p>
                 <p class="pris"></p>
-                <div class="button">
-                    <a href="#"><img src="../l%C3%A6g_i_kurv_modsat.png" alt=""></a>
-                </div>
+                <button class="put">Læg i kurv</button>
             </div>
         </div>
     </template>
@@ -238,6 +272,7 @@
         function start() {
             console.log("start");
 
+
             async function getJson() {
                 let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/produkter";
                 let jsonData = await fetch(url);
@@ -265,9 +300,16 @@
 
             }
 
+
             getJson();
+            back();
         }
 
+        function back() {
+            document.querySelector(".luk").addEventListener("click", () => {
+                location.href = "index.html#hertil";
+            })
+        }
     </script>
 </body>
 
