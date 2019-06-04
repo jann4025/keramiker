@@ -91,14 +91,16 @@ font-style: italic;
 */
 
 
-
+body {
+    overflow-x: hidden;
+}
 
 /*Generel css for alle sider*/
 * {
     font-family: futura-pt, sans-serif;
     margin: 0;
     padding: 0;
-    /*    border: red 1px solid;*/
+    border: red 1px solid;
 }
 
 h1 {
@@ -108,6 +110,7 @@ h1 {
 .row {
     display: grid;
     justify-items: center;
+    max-width: 99vw;
 
 }
 
@@ -124,8 +127,10 @@ h1 {
     top: 0;
     padding: 2em;
     width: 100%;
+    max-width: 100vw;
     text-align: center;
     z-index: 999;
+
 }
 
 .desktop-nav a {
@@ -208,7 +213,7 @@ i {
 
 footer {
     margin-top: 5vw;
-    width: 100vw;
+    max-width: 100vw;
     height: auto;
     background: #E4E4E4;
     padding-top: 5em;
@@ -308,16 +313,27 @@ footer.bottom i {
 }
 
 #info-container .content {
-    height: 1000px;
-    padding: 5em;
+    height: auto;
+    /*    padding: 5em;*/
     text-align: center;
     display: grid;
     justify-items: center;
     align-items: center;
+    width: 100%;
+    margin-top: 4em;
+    margin-bottom: 4em;
 }
 
 .info_tekst1 h3 {
     font-weight: 200;
+}
+
+.info_tekst1 {
+    margin-bottom: 2em;
+}
+
+.info_tekst2 {
+    margin-top: 2em;
 }
 
 .billeder {
@@ -327,17 +343,19 @@ footer.bottom i {
 }
 
 .billeder img {
-    width: 500px;
-    height: 600px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 600px;
 }
 
 #info-container .content p {
     font-size: 1.5em;
+    width: 100%;
     max-width: 1050px;
 }
 
 #kurser-container {
-    width: 100vw;
+    max-width: 100vw;
     height: 30em;
     display: grid;
     align-items: center;
@@ -380,7 +398,7 @@ footer.bottom i {
 
 #mest-solgte-container .content {
     text-align: center;
-    width: 100vw;
+    max-width: 100vw;
 }
 
 #mest-solgte-container .row {
@@ -403,8 +421,7 @@ footer.bottom i {
 
 
 #mest-solgte-container .column {
-    width: 100vw;
-    max-width: 320px;
+    max-width: 100vw;
     height: 500px;
     overflow: hidden;
 }
@@ -417,8 +434,8 @@ footer.bottom i {
 }
 
 #flakkebjerg-container {
-    width: 100vw;
-    height: 30em;
+    max-width: 100vw;
+    height: auto;
     display: grid;
     align-items: center;
     justify-items: center;
@@ -426,11 +443,13 @@ footer.bottom i {
     background-size: cover;
     background-position: center;
     margin-top: 3em;
+    min-height: 30em;
 }
 
 #flakkebjerg-container .content {
     width: 70%;
     color: whitesmoke;
+
 }
 
 #flakkebjerg-container .content h1 {
@@ -455,7 +474,9 @@ footer.bottom i {
     margin-bottom: 1em;
 }
 
-
+#splash-container {
+    max-width: 100vw;
+}
 
 /*Forside slut*/
 
@@ -572,7 +593,7 @@ footer.bottom i {
     height: 100%;
 }
 
-.galleri .billeder_galleri {
+.galleri .billeder_galleri_galleri {
     text-align: center;
     width: 100%;
     height: 100%;
@@ -640,7 +661,7 @@ footer.bottom i {
         width: 460px;
     }
 
-    .galleri .billeder {
+    .galleri .billeder_galleri {
         max-height: 300px;
         max-width: 300px;
     }
@@ -678,7 +699,7 @@ footer.bottom i {
         padding: 3em;
     }
 
-    .galleri .billeder {
+    .galleri .billeder_galleri {
         max-height: 250px;
         max-width: 250px;
     }
@@ -746,7 +767,7 @@ footer.bottom i {
         text-align: center;
     }
 
-    .galleri .billeder {
+    .galleri .billeder_galleri {
         max-height: 300px;
         max-width: 300px;
     }
@@ -766,9 +787,14 @@ footer.bottom i {
         text-align: center;
     }
 
-    .galleri .billeder {
+    .galleri .billeder_galleri {
         width: 100%;
     }
+
+    .billeder {
+        grid-template-columns: 1fr;
+    }
+
 
 }
 
@@ -785,6 +811,15 @@ footer.bottom i {
         display: block;
     }
 }
+
+@media only screen and (max-width: 520px) {
+
+    .info_tekst1 {
+        font-size: 1em;
+    }
+
+}
+
 
 @media only screen and (max-width: 500px) {
     .intro img {
@@ -806,10 +841,15 @@ footer.bottom i {
         width: 90%;
     }
 
-    .galleri .billeder {
+    .galleri .billeder_galleri {
         width: 370px;
         height: 370px;
     }
+
+
+
+
+
 }
 
 @media only screen and (max-width: 426px) {
@@ -830,9 +870,11 @@ footer.bottom i {
     }
 
     #info-container .content {
-        padding: 2em;
-        padding-top: 10em;
-        padding-bottom: 10em;
+        display: grid;
+        justify-items: center;
+        /*        padding: 2em;*/
+        padding-top: 1em;
+        padding-bottom: 1em;
     }
 
     #mest-solgte-container .row {
@@ -847,10 +889,23 @@ footer.bottom i {
         padding: 0;
         margin: 0;
     }
+
+    #kurser-container .content {
+        width: 95%;
+        text-align: center;
+    }
+
+    #flakkebjerg-container .content {
+        width: 95%;
+
+    }
+
 }
 
 
 @media only screen and (max-width: 321px) {
+
+
     .header-content h1 {
         font-size: 3em;
     }
@@ -872,7 +927,7 @@ footer.bottom i {
         margin: 0;
     }
 
-    .galleri .billeder {
+    .galleri .billeder_galleri {
         width: 100%;
     }
 }
