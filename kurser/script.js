@@ -37,12 +37,11 @@ function start() {
         kurser.forEach(kursus => {
             let klon = temp.cloneNode(true).content;
 
-            klon.querySelector(".kursus h1").innerHTML = kursus.title.rendered;
             klon.querySelector(".beskrivelse1").innerHTML = kursus.kurser_beskrivelse_1;
             klon.querySelector(".billede p").innerHTML = kursus.kursus_beskrivelse_2;
             klon.querySelector(".pris").innerHTML = "Pris pr. deltager: " + kursus.kursus_pris;
             klon.querySelector(".billede").style.backgroundImage = `url('${kursus.kursus_billede.guid}')`;
-            klon.querySelector(".tilmelding p").innerHTML = kursus.tilmelding;
+            klon.querySelector(".tilmelding").innerHTML = kursus.content.rendered;
 
             dest.appendChild(klon);
         })
