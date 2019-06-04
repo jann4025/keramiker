@@ -12,7 +12,6 @@ $(function () {
 
 });
 
-
 document.addEventListener("DOMContentLoaded", start);
 $(function () {
     var header = $(".desktop-nav");
@@ -27,9 +26,18 @@ $(function () {
     });
 
 });
-
+let info = [];
 let shop = [];
 document.addEventListener("DOMContentLoaded", start);
+
+function fadeIn() {
+    document.querySelector(".se_mere").style.display = "block";
+    document.querySelector(".se_mere").style.zIndex = "99";
+}
+
+function fadeOut() {
+    document.querySelector(".se_mere").style.display = "none";
+}
 
 
 function start() {
@@ -61,7 +69,7 @@ function start() {
             klon.querySelector(".produkt h1").innerHTML = produkt.title.rendered;
             klon.querySelector(".produkt img").src = produkt.billede.guid;
 
-            klon.querySelector(".pris").innerHTML = produkt.pris;
+            klon.querySelector(".pris").innerHTML = produkt.pris + (" ,-");
 
             dest.appendChild(klon);
             dest.lastElementChild.addEventListener("click", () => {
@@ -69,6 +77,11 @@ function start() {
             })
         })
 
+    }
+
+    function showInfo() {
+        console.log(info);
+        document.querySelector(".tekst p").innerHTML = info[0].content.rendered;
     }
 
     async function getJson() {
@@ -79,6 +92,14 @@ function start() {
         showShop();
     }
 
+    async function getInfo() {
+        console.log("hent info");
+        let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/shop_beskrivelse";
+        let jsonData = await fetch(url);
+        info = await jsonData.json();
+        showInfo();
+    }
+    getInfo();
     getJson();
 
 

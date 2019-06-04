@@ -140,6 +140,7 @@
                 justify-items: center;
             }
         }
+
     </style>
 </head>
 
@@ -149,7 +150,7 @@
         <nav class="desktop-nav scroll">
             <img src="" alt="">
             <a href="../index.html">FORSIDE</a>
-            <a href="shop">SHOP</a>
+            <a href="index.html">SHOP</a>
             <a href="../galleri">GALLERI</a>
             <a href="../kurser">KURSER</a>
             <a href="../lene-hansen">OM</a>
@@ -164,7 +165,7 @@
             <div class="inner">
                 <img src="" alt="">
                 <a href="../index.html">FORSIDE</a>
-                <a href="#">SHOP</a>
+                <a href="index.html">SHOP</a>
                 <a href="../galleri">GALLERI</a>
                 <a href="../kurser">KURSER</a>
                 <a href="../lene-hansen">OM</a>
@@ -229,21 +230,6 @@
 
 
     <script>
-        $(function() {
-            var header = $(".desktop-nav");
-
-            $(window).scroll(function() {
-                var scroll = $(window).scrollTop();
-                if (scroll >= 50) {
-                    header.addClass("scroll");
-                } else {
-                    header.removeClass("scroll");
-                }
-            });
-
-        });
-
-
         document.querySelector(".uil-bars").addEventListener("click", visMenu);
 
         function visMenu() {
@@ -292,7 +278,7 @@
                         klon.querySelector(".produkt h1").innerHTML = produkt.title.rendered;
                         klon.querySelector(".produkt img").src = produkt.billede.guid;
                         klon.querySelector(".beskrivelse").innerHTML = produkt.beskrivelse;
-                        klon.querySelector(".pris").innerHTML = "Pris: " + produkt.pris;
+                        klon.querySelector(".pris").innerHTML = "Pris: " + produkt.pris + (" ,-");
 
                         dest.appendChild(klon);
                     }
@@ -310,6 +296,7 @@
                 location.href = "index.html#hertil";
             })
         }
+
     </script>
 </body>
 
