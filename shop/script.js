@@ -27,7 +27,7 @@ $(function () {
     });
 
 });
-
+let info = [];
 let shop = [];
 document.addEventListener("DOMContentLoaded", start);
 
@@ -71,6 +71,11 @@ function start() {
 
     }
 
+    function showInfo() {
+        console.log(info);
+        document.querySelector(".tekst p").innerHTML = info[0].content.rendered;
+    }
+
     async function getJson() {
         console.log("hent data");
         let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/produkter";
@@ -79,6 +84,14 @@ function start() {
         showShop();
     }
 
+    async function getInfo() {
+        console.log("hent info");
+        let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/shop_beskrivelse";
+        let jsonData = await fetch(url);
+        info = await jsonData.json();
+        showInfo();
+    }
+    getInfo();
     getJson();
 
 
