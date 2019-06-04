@@ -92,7 +92,7 @@ font-style: italic;
 
 
 body {
-/*    overflow-x: hidden;*/
+    /*    overflow-x: hidden;*/
 }
 
 /*Generel css for alle sider*/
@@ -100,7 +100,7 @@ body {
     font-family: futura-pt, sans-serif;
     margin: 0;
     padding: 0;
-/*    border: red 1px solid;*/
+    /*    border: red 1px solid;*/
 }
 
 h1 {
@@ -122,6 +122,15 @@ h1 {
     padding-left: 1em;
 }
 
+#logonav {
+    width: 100px;
+    padding: 0;
+    margin: 0;
+    max-width: 80px;
+    padding-left: 1em;
+    margin-top: 1vw;
+}
+
 .desktop-nav {
     position: fixed;
     top: 0;
@@ -135,11 +144,19 @@ h1 {
 
 .desktop-nav a {
     float: left;
-    padding-left: 14em;
+    margin-left: 11em;
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1em;
     color: whitesmoke;
+}
+
+#kurv {
+    width: 100%;
+    max-width: 30px;
+    max-height: 30px;
+    display: inline-block;
+    position: relative;
 }
 
 i {
@@ -167,7 +184,8 @@ i {
     width: 100%;
     z-index: 999;
     padding: 1vw;
-    text-align: right;
+    text-align: center;
+
 
 }
 
@@ -250,6 +268,21 @@ footer.bottom i {
 .noget-andet {
     max-width: 300px;
 }
+
+#kurv1 {
+    font-size: 71%;
+    position: absolute;
+    top: 0%;
+    right: -13%;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: red;
+    display: none;
+
+}
+
+
 
 /*Generel css slut*/
 
@@ -593,7 +626,7 @@ footer.bottom i {
     height: 100%;
 }
 
-.galleri .billeder_galleri_galleri {
+.galleri .billeder_galleri {
     text-align: center;
     width: 100%;
     height: 100%;
@@ -615,7 +648,7 @@ footer.bottom i {
 
     .desktop-nav a {
         float: left;
-        padding-left: 13em;
+        margin-left: 10em;
     }
 
 }
@@ -633,7 +666,7 @@ footer.bottom i {
 
     .desktop-nav a {
         float: left;
-        padding-left: 10em;
+        margin-left: 9em;
     }
 }
 
@@ -647,7 +680,7 @@ footer.bottom i {
 
     .desktop-nav a {
         float: none;
-        padding: 5em;
+        margin-left: 8em;
     }
 
     .intro img {
@@ -665,14 +698,14 @@ footer.bottom i {
         max-height: 300px;
         max-width: 300px;
     }
-}
 
-@media only screen and (max-width: 1041px) {
     .desktop-nav a {
         float: none;
-        padding: 4.5em;
+        margin-left: 7em;
     }
 }
+
+@media only screen and (max-width: 1041px) {}
 
 @media only screen and (max-width: 1024px) {
     .intro h1 {
@@ -696,7 +729,7 @@ footer.bottom i {
     }
 
     .desktop-nav a {
-        padding: 3em;
+        margin-left: 6em;
     }
 
     .galleri .billeder_galleri {
@@ -714,6 +747,10 @@ footer.bottom i {
     .intro p {
         width: 350px;
     }
+
+    .desktop-nav a {
+        margin-left: 5em;
+    }
 }
 
 @media only screen and (max-width: 888px) {
@@ -724,6 +761,10 @@ footer.bottom i {
     .intro p {
         width: 350px;
     }
+
+    .desktop-nav a {
+        margin-left: 4em;
+    }
 }
 
 
@@ -732,9 +773,7 @@ footer.bottom i {
         padding: 1em;
     }
 
-    .desktop-nav a {
-        padding: 2em;
-    }
+
 
     .intro {
         display: block;
@@ -778,6 +817,22 @@ footer.bottom i {
 
 }
 
+@media only screen and (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .knap {
+        display: block;
+    }
+}
+
+
 @media only screen and (max-width: 700px) {
     .galleri {
         display: grid;
@@ -795,22 +850,15 @@ footer.bottom i {
         grid-template-columns: 1fr;
     }
 
+    .header-content h1 {
+        font-size: 3em;
+        padding-top: 10px;
+    }
+
 
 }
 
-@media only screen and (max-width: 658px) {
-    .desktop-nav {
-        display: none;
-    }
-
-    .mobile-nav {
-        display: flex;
-    }
-
-    .knap {
-        display: block;
-    }
-}
+@media only screen and (max-width: 658px) {}
 
 @media only screen and (max-width: 520px) {
 
@@ -845,6 +893,8 @@ footer.bottom i {
         width: 370px;
         height: 370px;
     }
+
+
 
 
 
@@ -900,6 +950,10 @@ footer.bottom i {
 
     }
 
+    .header-content h1 {
+        font-size: 2em;
+    }
+
 }
 
 
@@ -929,6 +983,10 @@ footer.bottom i {
 
     .galleri .billeder_galleri {
         width: 100%;
+    }
+
+    .header-content h1 {
+        font-size: 1.8em;
     }
 }
 
@@ -968,10 +1026,17 @@ footer.bottom i {
 
 .desktop-nav a:hover {
     opacity: .6;
+    transition: .2s;
 }
 
 .knap i {
     color: whitesmoke;
+    float: right;
 }
 
-div {}
+
+.knap .kurv {
+    float: left;
+    max-height: 25px;
+    margin-top: 1vw;
+}

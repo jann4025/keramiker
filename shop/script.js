@@ -26,15 +26,36 @@ $(function () {
     });
 
 });
+<<<<<<< HEAD
 let info = []; /* Variabel med et tomt array*/
 let shop = []; /* Variabel med et tomt array*/
 document.addEventListener("DOMContentLoaded", start); /* Tilføjer en Eventlistener som skal sikre at vores html (DOM) er loadet inden vi kalder på start funktionen */
+=======
+let info = [];
+let shop = [];
+let urlParams = new URLSearchParams(window.location.search);
+let sejt = urlParams.get('sejt');
+
+
+document.addEventListener("DOMContentLoaded", start);
+
+function fadeIn() {
+    document.querySelector(".se_mere").style.display = "block";
+    document.querySelector(".se_mere").style.zIndex = "99";
+}
+
+function fadeOut() {
+    document.querySelector(".se_mere").style.display = "none";
+}
+>>>>>>> origin/master
 
 
 function start() {
+    console.log(sejt);
     console.log("start");
-
     document.querySelector(".uil-bars").addEventListener("click", visMenu);
+
+
 
     function visMenu() {
         console.log("nej");
@@ -92,6 +113,4 @@ function start() {
     }
     getInfo();
     getJson();
-
-
 }
