@@ -207,6 +207,7 @@
                 margin-top: 0;
             }
         }
+
     </style>
 </head>
 
@@ -221,10 +222,10 @@
         <nav class="desktop-nav">
             <a href="../index.html" id="logo"><img id="logo" src="../lene_white.png" alt=""></a>
             <!--           <a href="#">FORSIDE</a>-->
-            <a href="#">SHOP</a>
-            <a href="../galleri">GALLERI</a>
-            <a href="../kurser">KURSER</a>
-            <a href="#">OM</a>
+            <a class="nav-item" href="../">SHOP</a>
+            <a class="nav-item" href="../galleri">GALLERI</a>
+            <a class="nav-item" href="../kurser">KURSER</a>
+            <a class="active" href="#">OM</a>
             <a href="" id="kurv">
                 <img src="../hvid_kurv.svg" id="kurv" alt="">
                 <span id="kurv1"></span>
@@ -343,5 +344,55 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+
+        //Scroll back to top
+
+        (function($) {
+            "use strict";
+
+            $(document).ready(function() {
+                "use strict";
+
+
+
+                var progressPath = document.querySelector('.progress-wrap path');
+                var pathLength = progressPath.getTotalLength();
+                progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+                progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+                progressPath.style.strokeDashoffset = pathLength;
+                progressPath.getBoundingClientRect();
+                progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+                var updateProgress = function() {
+                    var scroll = $(window).scrollTop();
+                    var height = $(document).height() - $(window).height();
+                    var progress = pathLength - (scroll * pathLength / height);
+                    progressPath.style.strokeDashoffset = progress;
+                }
+                updateProgress();
+                $(window).scroll(updateProgress);
+                var offset = 50;
+                var duration = 550;
+                jQuery(window).on('scroll', function() {
+                    if (jQuery(this).scrollTop() > offset) {
+                        jQuery('.progress-wrap').addClass('active-progress');
+                    } else {
+                        jQuery('.progress-wrap').removeClass('active-progress');
+                    }
+                });
+                jQuery('.progress-wrap').on('click', function(event) {
+                    event.preventDefault();
+                    jQuery('html, body').animate({
+                        scrollTop: 0
+                    }, duration);
+                    return false;
+                })
+
+
+            });
+
+        })(jQuery);
+
     </script>
-</body></html>
+</body>
+
+</html>
