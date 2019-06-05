@@ -14,133 +14,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v0.0.4/css/unicons.css">
-    <style>
-        .luk {
-            position: absolute;
-            top: 137px;
-            font-size: 1.2em;
-            width: 90px;
-            padding-left: 50px;
-            font-weight: 700;
-        }
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
-        .luk p {
-            display: inline-block;
-        }
+    <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" data-api-key="YOUR_API_KEY" id="snipcart"></script>
 
-        .pil {
-            font-size: 1.5em;
-            padding: 5px
-        }
+    <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type="text/css" />
 
-        .luk p:hover {
-            color: #59514d;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        #put {
-            width: 100px;
-            height: 50px;
-            border-radius: 3px;
-            box-shadow: none;
-            background-color: #59514d;
-            color: whitesmoke;
-            font-size: 1.2em;
-            border: none;
-            margin-top: 50px;
-        }
-
-        #put:hover {
-            background-color: #262420;
-            cursor: pointer;
-        }
-
-        .singleview {
-            margin-top: 150px;
-        }
-
-        .tekst {
-            align-items: baseline;
-        }
-
-        .produkt {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            max-width: 1200px;
-            margin: 0 auto;
-            justify-items: center;
-        }
-
-        .produkt h1 {
-            font-size: 50px;
-        }
-
-        .pris {
-            margin-top: 50px;
-            font-size: 1.2em;
-
-        }
-
-        .produkt img {
-            max-height: 600px;
-            max-width: 400px;
-        }
-
-        .produkter-container img {
-            width: 100%;
-            height: 100%;
-        }
-
-        #underside-splash-container {
-            height: 70vh;
-        }
-
-        .underside-header-overlay {
-            height: 70vh;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: rgba(89, 81, 77, 0.82);
-            z-index: -1;
-            opacity: 0.55;
-        }
-
-        .underside-splash-content {
-            height: 35vh;
-
-
-        }
-
-
-        .fullscreen-photo-wrap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 70vh;
-            overflow: hidden;
-            z-index: -2;
-            background-color: rgba(121, 188, 226, 0.5);
-        }
-
-        .fullscreen-photo-wrap img {
-            min-width: 100%;
-            min-height: 100%;
-        }
-
-
-        @media only screen and (max-width: 833px) {
-            .produkt {
-                display: grid;
-                grid-template-columns: 1fr;
-                max-width: 1200px;
-                margin: 0 auto;
-                justify-items: center;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -169,7 +48,7 @@
 
         <div class=" knap">
             <i class='uil uil-bars'></i>
-            <a href="index.html" id="logonav"><img id="logonav" src="../lene_white.png" alt=""></a>
+            <a href="index.html" class="logonav"><img class="logonav" src="../lene_white.png" alt=""></a>
             <img src="../hvid_kurv.svg" class="kurv" alt="">
         </div>
 
@@ -260,15 +139,14 @@
 
 
 
-        let urlParams = new URLSearchParams(window.location.search);
-        let titel = urlParams.get("titel");
-        console.log(titel);
-        let dest = document.querySelector(".singleview");
-        let temp = document.querySelector(".temp");
+
+        let shop; /* Global variabel */
+        let urlParams = new URLSearchParams(window.location.search); /* Variabel som søger efter den udvalgte overførte URL varibel ud som var titel */
+        let titel = urlParams.get("titel"); /* Henter URL variabel ud fra titel*/
+        console.log(titel); /* Udsrivker titlen på den overførte variabel */
+        let dest = document.querySelector(".singleview"); /* Variabel hvor vi angiver hvor vores inhold skal placeres i html */
+        let temp = document.querySelector(".temp"); /* Varibel hvor vi angiver hvilken template funktionen skal bruge i html */
         let sejt = 1;
-        let footerSektion = [];
-
-
         document.addEventListener("DOMContentLoaded", start); /* Tilføjer en Eventlistener som skal sikre at vores html (DOM) er loadet inden vi kalder på start funktionen */
 
 
@@ -283,7 +161,8 @@
             }
             document.querySelector("#kurv1").innerHTML = sejt;
 
-            async function getJson() { /* Async funktion som henter vores JSON ned */
+            async function getJson() {
+                /* Async funktion som henter vores JSON ned */
                 let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/produkter"; /* En variabel med et link som indeholder vores indhold fra en json side */
                 let footerUrl = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/footer";
                 let jsonData = await fetch(url); /* Variabel som henter vores JSON indhold ned fra vores url variabl */
@@ -292,7 +171,6 @@
                 footerSektion = await footerJson.json();
                 showProduct(); /* Kalder funktionen skal vise indholdet  */
             }
-
 
 
             function showProduct() { /* Funktion som viser inholdet */
@@ -307,8 +185,10 @@
                 console.log(shop);
                 dest.innerHTML = "";
 
-                shop.forEach(produkt => { /* Vi laver et loop som læser alt indhold som er inde i vores globale variabel*/
-                    if (produkt.title.rendered == titel) { /* Hvis tilten er den samme i den globale variabel og den overførte variabel skal den gøre dette */
+                shop.forEach(produkt => {
+                    /* Vi laver et loop som læser alt indhold som er inde i vores globale variabel*/
+                    if (produkt.title.rendered == titel) {
+                        /* Hvis tilten er den samme i den globale variabel og den overførte variabel skal den gøre dette */
                         let klon = temp.cloneNode(true).content; /*Variabel som siger at kloning af template taggets indhold sker */
                         klon.querySelector(".produkt h1").innerHTML = produkt.title.rendered;
                         klon.querySelector(".produkt img").src = produkt.billede.guid;
@@ -321,7 +201,7 @@
                 });
 
 
-                //                document.querySelector("#put").addEventListener("click", KurvAdd);
+                document.querySelector("#put").addEventListener("click", KurvAdd);
 
             }
 
@@ -337,17 +217,26 @@
 
             }
 
-            getJson();
-            back();
+            getJson(); /* Kalder funktionen som skal hente vores indhold */
+            back(); /* Kalder tage os tilbage til den side man kom fra */
+        }
 
-            function back() {
-                document.querySelector(".luk").addEventListener("click", () => {
-                    location.href = "index.html#hertil?sejt=" + sejt;
-                })
-            }
+        function back() {
+            document.querySelector(".luk").addEventListener("click", () => {
+                /* Tilføjer en eventlistner der lytter på et click, hvorefter man bliver taget til den skrevne lokation */
+                location.href = "index.html#hertil";
+            })
 
+
+            //            function back() {
+            //                document.querySelector(".luk").addEventListener("click", () => {
+            //                    location.href = "index.html#hertil?sejt=" + sejt;
+            //                })
+            //            }
 
         }
     </script>
 
-</body></html>
+</body>
+
+</html>

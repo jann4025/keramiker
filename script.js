@@ -54,14 +54,14 @@ function start() {
             document.querySelector("#kurser-container").style.backgroundImage = `url('${forside.kurser_billeder.guid}')`;
             document.querySelector("#kurser-container .content .top").innerHTML = forside.kurser_teskt;
             document.querySelector("#mest-solgte-container .billede1 img").src = forside.mest_solgt_billede_et.guid;
-            document.querySelector("#mest-solgte-container .billede1 + figcaption h3").innerHTML = forside.mest_solgte_vare_navn;
-            document.querySelector("#mest-solgte-container .billede1 + figcaption p").innerHTML = forside.mest_solgte_vare_pris;
+            document.querySelector("#mest-solgte-container .billede1 + span h3").innerHTML = forside.mest_solgte_vare_navn;
+            document.querySelector("#mest-solgte-container .billede1 + span p").innerHTML = forside.mest_solgte_vare_pris;
             document.querySelector("#mest-solgte-container .billede2 img").src = forside.mest_solgte_billede_to.guid;
-            document.querySelector("#mest-solgte-container .billede2 + figcaption h3").innerHTML = forside.mest_solgte_vare_navn_2;
-            document.querySelector("#mest-solgte-container .billede2 + figcaption p").innerHTML = forside.mest_solgte_vare_pris_2;
+            document.querySelector("#mest-solgte-container .billede2 + span h3").innerHTML = forside.mest_solgte_vare_navn_2;
+            document.querySelector("#mest-solgte-container .billede2 + span p").innerHTML = forside.mest_solgte_vare_pris_2;
             document.querySelector("#mest-solgte-container .billede3 img").src = forside.mest_solgte_billede_tre.guid;
-            document.querySelector("#mest-solgte-container .billede3 + figcaption h3").innerHTML = forside.mest_solgte_vare_navn_3;
-            document.querySelector("#mest-solgte-container .billede3 + figcaption p").innerHTML = forside.mest_solgte_vare_pris_3;
+            document.querySelector("#mest-solgte-container .billede3 + span h3").innerHTML = forside.mest_solgte_vare_navn_3;
+            document.querySelector("#mest-solgte-container .billede3 + span p").innerHTML = forside.mest_solgte_vare_pris_3;
             document.querySelector("#flakkebjerg-container").style.backgroundImage = `url('${forside.flakkebjerg_billede.guid}')`;
             document.querySelector("#flakkebjerg-container .content").innerHTML = forside.flakkebjerg_tekst;
 
