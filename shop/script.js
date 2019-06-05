@@ -48,6 +48,7 @@ function fadeOut() {
 
 
 function start() {
+
     console.log(sejt);
     console.log("start");
     document.querySelector(".uil-bars").addEventListener("click", visMenu);
