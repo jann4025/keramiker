@@ -15,6 +15,8 @@ $(function () {
 
 document.addEventListener("DOMContentLoaded", start); /* Tilføjer en Eventlistener som skal sikre at vores html (DOM) er loadet inden vi kalder på start funktionen */
 let kurser = {}; /* Variabel med et tomt array*/
+let footerSektion = [];
+
 
 
 function start() {
@@ -32,6 +34,14 @@ function start() {
 
 
     function showKurser() {
+
+        footerSektion.forEach(footer => {
+            console.log(footerSektion);
+            document.querySelector(".open-hours").innerHTML = footerSektion[0].aabningstider;
+            document.querySelector(".noget-andet").innerHTML = footerSektion[0].kontakt;
+            document.querySelector(".facebook").href = footerSektion[0].facebook;
+            document.querySelector(".instagram").href = footerSektion[0].instagram;
+        });
         console.log("Kurser");
         console.log(kurser);
 
@@ -54,8 +64,11 @@ function start() {
     async function getJson() { /* Async funktion som henter vores JSON ned */
         console.log("hent data");
         let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/kurser"; /* En variabel med et link som indeholder vores indhold fra en json side */
+        let footerUrl = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/footer";
         let jsonData = await fetch(url); /* Variabel som henter vores JSON indhold ned fra vores url variabl */
+        let footerJson = await fetch(footerUrl);
         kurser = await jsonData.json(); /* Henter vores JSON indhold og putter det ind i vores tomme array */
+        footerSektion = await footerJson.json();
         showKurser(); /* Kalder funktionen som skal vise vores indhold */
     }
 

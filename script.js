@@ -15,6 +15,7 @@ $(function () {
 
 document.addEventListener("DOMContentLoaded", start);
 let forside = {};
+let footerSektion = [];
 
 
 function start() {
@@ -29,7 +30,16 @@ function start() {
     }
 
     function visForsideIndhold() {
+        footerSektion.forEach(footer => {
+            console.log(footerSektion);
+            document.querySelector(".open-hours").innerHTML = footerSektion[0].aabningstider;
+            document.querySelector(".noget-andet").innerHTML = footerSektion[0].kontakt;
+            document.querySelector(".facebook").href = footerSektion[0].facebook;
+            document.querySelector(".instagram").href = footerSektion[0].instagram;
+        });
+
         forside.forEach(forside => {
+
             document.querySelector("video").src = forside.baggrunds_video.guid;
             document.querySelector(".header-content").innerHTML = forside.velkommen_tekst;
             document.querySelector(".header-content").innerHTML += `<div class="scroll_center">
@@ -60,9 +70,13 @@ function start() {
     }
 
     async function getJson() {
-        let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/forside";
+        let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/forside"
+        let footerUrl = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/footer";
+
         let jsonData = await fetch(url);
+        let footerJson = await fetch(footerUrl);
         forside = await jsonData.json();
+        footerSektion = await footerJson.json();
         visForsideIndhold();
     }
 

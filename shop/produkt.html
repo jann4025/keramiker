@@ -155,8 +155,8 @@
             <div class="dropdown">
                 <a class="nav-item" href="lene-hansen">OM</a>
                 <div class="dropdown-content">
-                    <a href="lene-hansen#om-cv-container">Lene Hansen</a>
-                    <a href="lene-hansen#kontakt-container">Kontakt</a>
+                    <a href="../lene-hansen#om-cv-container">Lene Hansen</a>
+                    <a href="../lene-hansen#kontakt-container">Kontakt</a>
                 </div>
             </div>
             <a href="" id="kurv">
@@ -215,29 +215,32 @@
 
     </main>
     <footer>
-
         <div class="top">
-            <div class="open-hours">
-                <h1>Åbningstider</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam placeat exercitationem consectetur quibusdam animi perferendis tempora sint voluptates expedita asperiores autem vel odio enim ducimus, hic, esse fugit sed, neque eius debitis at quisquam eligendi officiis. Vel cupiditate praesentium, voluptates recusandae accusamus animi iusto magnam tempora, perspiciatis impedit ut quod!</p>
-
-
-
-            </div>
-
             <div class="link">
-                <h1>Links</h1>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nam dolor quidem tempora perspiciatis, deserunt minus perferendis illo accusamus, odit repudiandae aspernatur numquam ratione aliquid quia illum culpa vel esse molestiae itaque cupiditate voluptatibus! Vero vel, est tempore enim quasi harum, possimus aliquam, magnam rerum eius a perferendis doloremque velit!
+                <a class="" href="../shop">SHOP</a>
+                <a class="" href="../galleri">GALLERI</a>
+                <a class="" href="../kurser">KURSER</a>
+                <a class="" href="../lene-hansen">OM</a>
+
+                <a class="" href="../lene-hansen#om-cv-container">LENE HANSEN</a>
+                <a href="../lene-hansen#kontakt-container">KONTAKT</a>
             </div>
+            <div class="open-hours">
+
+
+
+
+            </div>
+
+
 
             <div class="noget-andet">
-                <h1>Noget andet</h1>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia corporis officia dolorem quo tempora quae expedita cum, ullam autem pariatur inventore eos rerum perspiciatis reiciendis, dolores vel, et dolore architecto amet nemo reprehenderit fuga. Voluptates error, officiis quisquam magni, voluptas animi odio assumenda ab cumque perferendis, non maiores soluta expedita.
+
             </div>
         </div>
         <div class="bottom">
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-instagram"></i>
+            <a class="facebook" href=""><i class="fab fa-facebook-square"></i></a>
+            <a class="instagram" href=""> <i class="fab fa-instagram"></i></a>
         </div>
     </footer>
 
@@ -257,29 +260,13 @@
 
 
 
-        <<
-        <<
-        <<
-        <
-        HEAD
-        let shop; /* Global variabel */
-        let urlParams = new URLSearchParams(window.location.search); /* Variabel som søger efter den udvalgte overførte URL varibel ud som var titel */
-        let titel = urlParams.get("titel"); /* Henter URL variabel ud fra titel*/
-        console.log(titel); /* Udsrivker titlen på den overførte variabel */
-        let dest = document.querySelector(".singleview"); /* Variabel hvor vi angiver hvor vores inhold skal placeres i html */
-        let temp = document.querySelector(".temp"); /* Varibel hvor vi angiver hvilken template funktionen skal bruge i html */ ===
-        ===
-        =
-        let shop;
         let urlParams = new URLSearchParams(window.location.search);
         let titel = urlParams.get("titel");
         console.log(titel);
         let dest = document.querySelector(".singleview");
         let temp = document.querySelector(".temp");
-        let sejt = 1; >>>
-        >>>
-        >
-        origin / master
+        let sejt = 1;
+        let footerSektion = [];
 
 
         document.addEventListener("DOMContentLoaded", start); /* Tilføjer en Eventlistener som skal sikre at vores html (DOM) er loadet inden vi kalder på start funktionen */
@@ -298,14 +285,25 @@
 
             async function getJson() { /* Async funktion som henter vores JSON ned */
                 let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/produkter"; /* En variabel med et link som indeholder vores indhold fra en json side */
+                let footerUrl = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/footer";
                 let jsonData = await fetch(url); /* Variabel som henter vores JSON indhold ned fra vores url variabl */
+                let footerJson = await fetch(footerUrl);
                 shop = await jsonData.json(); /* Henter vores JSON indhold og putter det ind i vores globale varibel*/
+                footerSektion = await footerJson.json();
                 showProduct(); /* Kalder funktionen skal vise indholdet  */
             }
 
 
 
             function showProduct() { /* Funktion som viser inholdet */
+                footerSektion.forEach(footer => {
+                    console.log(footerSektion);
+                    document.querySelector(".open-hours").innerHTML = footerSektion[0].aabningstider;
+                    document.querySelector(".noget-andet").innerHTML = footerSektion[0].kontakt;
+                    document.querySelector(".facebook").href = footerSektion[0].facebook;
+                    document.querySelector(".instagram").href = footerSektion[0].instagram;
+                });
+
                 console.log(shop);
                 dest.innerHTML = "";
 
@@ -339,23 +337,7 @@
 
             }
 
-
-            <<
-            <<
-            <<
-            <
-            HEAD
-            getJson(); /* Kalder funktionen som skal hente vores indhold */
-            back(); /* Kalder tage os tilbage til den side man kom fra */
-        }
-
-        function back() {
-            document.querySelector(".luk").addEventListener("click", () => { /* Tilføjer en eventlistner der lytter på et click, hvorefter man bliver taget til den skrevne lokation */
-                    location.href = "index.html#hertil";
-                }) ===
-                ===
-                =
-                getJson();
+            getJson();
             back();
 
             function back() {
@@ -364,10 +346,7 @@
                 })
             }
 
-            >>>
-            >>>
-            >
-            origin / master
+
         }
     </script>
 

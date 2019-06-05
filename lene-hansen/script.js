@@ -14,6 +14,7 @@ $(function () {
 
 document.addEventListener("DOMContentLoaded", start);
 let om = {};
+let footerSektion = [];
 
 function start() {
     console.log(om);
@@ -28,6 +29,13 @@ function start() {
     }
 
     function visOmIndhold() {
+        footerSektion.forEach(footer => {
+            console.log(footerSektion);
+            document.querySelector(".open-hours").innerHTML = footerSektion[0].aabningstider;
+            document.querySelector(".noget-andet").innerHTML = footerSektion[0].kontakt;
+            document.querySelector(".facebook").href = footerSektion[0].facebook;
+            document.querySelector(".instagram").href = footerSektion[0].instagram;
+        });
         om.forEach(om => {
             document.querySelector("#underside-splash-container img").src = om.splash.guid;
             document.querySelector(".underside-splash-content").innerHTML = om.overskrift;
@@ -47,8 +55,11 @@ function start() {
     }
     async function getJson() {
         let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/om_lene_hansen";
+        let footerUrl = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/footer";
         let jsonData = await fetch(url);
+        let footerJson = await fetch(footerUrl);
         om = await jsonData.json();
+        footerSektion = await footerJson.json();
         visOmIndhold();
     }
 

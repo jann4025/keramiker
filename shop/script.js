@@ -28,6 +28,7 @@ $(function () {
 });
 let info = []; /* Variabel med et tomt array*/
 let shop = []; /* Variabel med et tomt array*/
+let footerSektion = [];
 document.addEventListener("DOMContentLoaded", start); /* Tilføjer en Eventlistener som skal sikre at vores html (DOM) er loadet inden vi kalder på start funktionen */
 let urlParams = new URLSearchParams(window.location.search);
 let sejt = urlParams.get('sejt');
@@ -70,6 +71,14 @@ function start() {
         let dest = document.querySelector(".produkter-container");
         let temp = document.querySelector("template");
 
+        footerSektion.forEach(footer => {
+            console.log(footerSektion);
+            document.querySelector(".open-hours").innerHTML = footerSektion[0].aabningstider;
+            document.querySelector(".noget-andet").innerHTML = footerSektion[0].kontakt;
+            document.querySelector(".facebook").href = footerSektion[0].facebook;
+            document.querySelector(".instagram").href = footerSektion[0].instagram;
+        });
+
 
         shop.forEach(produkt => {
             let klon = temp.cloneNode(true).content;
@@ -96,8 +105,11 @@ function start() {
     async function getJson() {
         console.log("hent data");
         let url = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/produkter";
+        let footerUrl = "https://janhol.dk/kea/keramiker/wordpress/wp-json/wp/v2/footer";
         let jsonData = await fetch(url);
+        let footerJson = await fetch(footerUrl);
         shop = await jsonData.json();
+        footerSektion = await footerJson.json();
         showShop();
     }
 
