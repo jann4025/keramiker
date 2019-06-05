@@ -91,8 +91,15 @@ font-style: italic;
 */
 
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     /*    overflow-x: hidden;*/
+    background-image: url(baggrundsbillede_opac.png);
+    background-size: contain;
+    background-attachment: fixed;
 }
 
 /*Generel css for alle sider*/
@@ -101,6 +108,10 @@ body {
     margin: 0;
     padding: 0;
     /*    border: red 1px solid;*/
+}
+
+.text-align-center {
+    text-align: center;
 }
 
 h1 {
@@ -138,7 +149,7 @@ h1 {
     height: 0.1px;
     display: none;
     position: absolute;
-    right: 24.8em;
+    right: 17.7em;
     margin-top: 20px
 }
 
@@ -169,12 +180,31 @@ h1 {
 .desktop-nav a {
     float: left;
     display: block;
+    margin-left: 10em;
     text-decoration: none;
     font-weight: 700;
     margin-left: 11em;
     font-size: 1.1em;
     color: whitesmoke;
 }
+
+
+
+.active {
+    position: relative;
+}
+
+.active::before {
+    content: '[';
+    margin-right: 10px;
+}
+
+.active::after {
+    content: ']';
+    margin-left: 10px;
+
+}
+
 
 #kurv {
     width: 100%;
@@ -307,6 +337,239 @@ footer.bottom i {
 
 }
 
+
+/*Progressbar*/
+.progress-wrap {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.progress-wrap.active-progress {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.progress-wrap::after {
+    position: absolute;
+    font-family: 'unicons';
+    content: '\e84b';
+    text-align: center;
+    line-height: 46px;
+    font-size: 24px;
+    color: #262420;
+    left: 0;
+    top: 0;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    display: block;
+    z-index: 1;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.progress-wrap:hover::after {
+    opacity: 0;
+}
+
+.progress-wrap::before {
+    position: absolute;
+    font-family: 'unicons';
+    content: '\e84b';
+    text-align: center;
+    line-height: 46px;
+    font-size: 24px;
+    opacity: 0;
+    background-image: linear-gradient(298deg, black, #141313);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    left: 0;
+    top: 0;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    display: block;
+    z-index: 2;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.progress-wrap:hover::before {
+    opacity: 1;
+}
+
+.progress-wrap svg path {
+    fill: none;
+}
+
+.progress-wrap svg.progress-circle path {
+    stroke: #262420;
+    stroke-width: 4;
+    box-sizing: border-box;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+body.light .progress-wrap {
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+body.light .progress-wrap::after {
+    color: black;
+}
+
+body.light .progress-wrap svg.progress-circle path {
+    stroke: black;
+}
+
+.switch,
+.circle {
+    -webkit-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+.switch {
+    width: 80px;
+    height: 4px;
+    border-radius: 27px;
+    background-image: linear-gradient(298deg, black, #121212);
+    position: fixed;
+    right: 50px;
+    top: 75px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 1;
+    z-index: 33333;
+    transition: all 300ms linear;
+}
+
+.circle {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: black;
+    box-shadow: 0 4px 4px rgba(26, 53, 71, 0.25), 0 0 0 1px rgba(26, 53, 71, 0.07);
+    animation: border-transform 10s linear infinite alternate forwards;
+}
+
+.circle:hover {
+    box-shadow: 0 8px 8px rgba(26, 53, 71, 0.25), 0 0 0 1px rgba(26, 53, 71, 0.07);
+}
+
+.circle:before {
+    position: absolute;
+    font-family: 'unicons';
+    content: '\eac1';
+    top: 0;
+    left: 0;
+    z-index: 2;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    opacity: 1;
+    color: #262420;
+    -webkit-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+.circle:after {
+    position: absolute;
+    font-family: 'unicons';
+    content: '\eb8f';
+    top: 0;
+    left: 0;
+    z-index: 2;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    color: black;
+    opacity: 0;
+    -webkit-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+.switched {}
+
+.switched .circle {
+    left: 45px;
+    box-shadow: 0 4px 4px rgba(26, 53, 71, 0.25), 0 0 0 1px rgba(26, 53, 71, 0.07);
+    background: black;
+}
+
+.switched .circle:hover {
+    box-shadow: 0 8px 8px rgba(26, 53, 71, 0.25), 0 0 0 1px rgba(26, 53, 71, 0.07);
+}
+
+.switched .circle:before {
+    opacity: 0;
+}
+
+.switched .circle:after {
+    opacity: 1;
+}
+
+/*Progressbar slut*/
+
+
+/*Scroll indicator*/
+.scroll_down {
+    position: absolute;
+    margin-top: 10vw;
+    animation: scrollDown;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.scroll_center {
+    /*    text-align: center;*/
+}
+
+.scroll_center a,
+.scroll_center i {
+    color: whitesmoke;
+}
+
+@keyframes scrollDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/*Scroll indicator slut*/
 
 
 /*Generel css slut*/
@@ -669,13 +932,21 @@ footer.bottom i {
 /*Media*/
 
 
-@media only screen and (max-width: 1361px) {
+@media only screen and (max-width: 1381px) {
 
     .desktop-nav a {
         float: left;
-        margin-left: 10em;
+        margin-left: 9em;
     }
 
+}
+
+@media only screen and (max-width: 1280px) {
+
+    .desktop-nav a {
+        float: left;
+        margin-left: 8em;
+    }
 }
 
 @media only screen and (max-width: 1250px) {
@@ -691,7 +962,7 @@ footer.bottom i {
 
     .desktop-nav a {
         float: left;
-        margin-left: 9em;
+        margin-left: 7em;
     }
 }
 
@@ -705,7 +976,7 @@ footer.bottom i {
 
     .desktop-nav a {
         float: none;
-        margin-left: 8em;
+        margin-left: 6em;
     }
 
     .intro img {
@@ -726,7 +997,7 @@ footer.bottom i {
 
     .desktop-nav a {
         float: none;
-        margin-left: 7em;
+        margin-left: 5em;
     }
 }
 
@@ -754,7 +1025,7 @@ footer.bottom i {
     }
 
     .desktop-nav a {
-        margin-left: 6em;
+        margin-left: 4em;
     }
 
     .galleri .billeder_galleri {
@@ -774,7 +1045,7 @@ footer.bottom i {
     }
 
     .desktop-nav a {
-        margin-left: 5em;
+        margin-left: 3em;
     }
 }
 
@@ -788,7 +1059,7 @@ footer.bottom i {
     }
 
     .desktop-nav a {
-        margin-left: 4em;
+        margin-left: 2em;
     }
 }
 
@@ -1039,6 +1310,44 @@ footer.bottom i {
 
 /*Media slut*/
 
+.nav-item::before {
+    margin-right: 10px;
+    content: '[';
+    color: whitesmoke;
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    transform: translateX(5px);
+}
+
+.nav-item::after {
+    margin-left: 10px;
+    content: ']';
+    color: whitesmoke;
+    -webkit-transform: translateX(-5px);
+    -moz-transform: translateX(-5px);
+    transform: translateX(-5px);
+}
+
+.nav-item::before,
+.nav-item::after {
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s;
+}
+
+.nav-item:hover::before,
+.nav-item:hover::after,
+.nav-item:focus::before,
+.nav-item:focus::after {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
+    color: whitesmoke;
+}
+
 
 .hide-mobile-nav {
     display: none;
@@ -1049,11 +1358,12 @@ footer.bottom i {
 
 .mobile-nav {}
 
+/*
 .desktop-nav a:hover {
     opacity: .6;
     transition: .2s;
 }
-
+*/
 .knap i {
     color: whitesmoke;
     float: right;
