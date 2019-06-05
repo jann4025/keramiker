@@ -90,7 +90,7 @@ function start() {
 
     function showInfo() {
         console.log(info);
-        document.querySelector(".tekst p").innerHTML = info[0].content.rendered;
+        document.querySelector(".shop_tekst p").innerHTML = info[0].content.rendered;
     }
 
     async function getJson() {

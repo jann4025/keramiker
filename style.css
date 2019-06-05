@@ -107,6 +107,7 @@ body {
     font-family: futura-pt, sans-serif;
     margin: 0;
     padding: 0;
+    user-select: none;
     /*    border: red 1px solid;*/
 }
 
@@ -133,7 +134,7 @@ h1 {
     padding-left: 1em;
 }
 
-#logonav {
+.logonav {
     width: 100px;
     padding: 0;
     margin: 0;
@@ -903,6 +904,621 @@ body.light .progress-wrap svg.progress-circle path {
 /*Galleri slut*/
 
 
+/*Produkt side*/
+.luk {
+    position: absolute;
+    top: 137px;
+    font-size: 1.2em;
+    width: 90px;
+    padding-left: 50px;
+    font-weight: 700;
+}
+
+.luk p {
+    display: inline-block;
+}
+
+.pil {
+    font-size: 1.5em;
+    padding: 5px
+}
+
+.luk p:hover {
+    color: #59514d;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#put {
+    width: 100px;
+    height: 50px;
+    border-radius: 3px;
+    box-shadow: none;
+    background-color: #59514d;
+    color: whitesmoke;
+    font-size: 1.2em;
+    border: none;
+    margin-top: 50px;
+}
+
+#put:hover {
+    background-color: #262420;
+    cursor: pointer;
+}
+
+.singleview {
+    margin-top: 150px;
+}
+
+.tekst {
+    align-items: baseline;
+}
+
+.singleview .produkt {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.singleview .produkt h1 {
+    font-size: 50px;
+}
+
+.singleview .pris {
+    margin-top: 50px;
+    font-size: 1.2em;
+
+}
+
+.singleview .produkt img {
+    max-height: 600px;
+    max-width: 400px;
+}
+
+.singleview .produkter-container img {
+    width: 100%;
+    height: 100%;
+}
+
+#underside-splash-container {
+    height: 70vh;
+}
+
+.underside-header-overlay {
+    height: 70vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(89, 81, 77, 0.82);
+    z-index: -1;
+    opacity: 0.55;
+}
+
+.underside-splash-content {
+    height: 35vh;
+
+
+}
+
+
+.fullscreen-photo-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    z-index: -2;
+    background-color: rgba(121, 188, 226, 0.5);
+}
+
+.fullscreen-photo-wrap img {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
+@media only screen and (max-width: 833px) {
+    .produkt {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-items: center;
+    }
+}
+
+/*Produkt side slut*/
+
+/*Shop*/
+.shop_tekst {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 1.3em;
+    padding-top: 3%;
+    text-align: center;
+}
+
+.shop_tekst h3 {
+    font-weight: 200;
+}
+
+.produkter-container {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 50px;
+    margin: 100px auto;
+    grid-gap: 50px;
+
+}
+
+.produkt {
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+.se_mere {
+    display: none;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    border-radius: 3px;
+    box-shadow: none;
+    background-color: #59514d;
+    color: whitesmoke;
+    font-size: 1.2em;
+    border: none;
+    margin-top: 125px;
+    margin-left: 125px;
+    z-index: 99;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.se_mere:hover {
+    background-color: #262420;
+    cursor: pointer;
+}
+
+.zoom {
+    max-height: 300px;
+    max-width: 350px;
+    overflow: hidden
+}
+
+.produkt img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.produkt:hover .se_mere {
+    display: block;
+    transition: .3s ease;
+    opacity: 1;
+
+}
+
+.produkt h1 {
+    font-size: 25px;
+}
+
+.produkt img {
+    max-height: 300px;
+    max-width: 350px;
+    transition: transform .5s ease;
+}
+
+.produkter-container img {
+    width: 100%;
+    height: 100%;
+}
+
+#underside-splash-container {
+    height: 70vh;
+}
+
+.underside-header-overlay {
+    height: 70vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(89, 81, 77, 0.82);
+    z-index: -1;
+    opacity: 0.55;
+}
+
+.underside-splash-content {
+    height: 35vh;
+
+
+}
+
+
+.fullscreen-photo-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    z-index: -2;
+    background-color: rgba(121, 188, 226, 0.5);
+}
+
+.fullscreen-photo-wrap img {
+
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
+@media only screen and (max-width: 833px) {
+    .produkter-container {
+        grid-template-columns: 1fr 1fr;
+        max-width: 700px;
+        margin: 0 auto;
+
+
+    }
+}
+
+/*Shop slut*/
+
+/*Kurser*/
+.info {
+    display: grid;
+    grid-template-columns: auto auto;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.kursus h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+.kurser-container .pris {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 30px;
+    padding-bottom: 50px;
+}
+
+.kurser-container .billede {
+    width: 100vw;
+    height: 30em;
+    display: grid;
+    justify-items: center;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.beskrivelse2 {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 1.5em;
+    padding-top: 10%;
+    color: whitesmoke;
+}
+
+.beskrivelse1 h3 {
+    text-align: center;
+
+}
+
+.kurser {}
+
+#underside-splash-container {
+    height: 70vh;
+}
+
+.underside-header-overlay {
+    height: 70vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(89, 81, 77, 0.82);
+    z-index: -1;
+    opacity: 0.55;
+}
+
+.underside-splash-content {
+    height: 35vh;
+}
+
+.fullscreen-photo-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    z-index: -2;
+    background-color: rgba(121, 188, 226, 0.5);
+}
+
+.fullscreen-photo-wrap img {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.tilmelding {
+    grid-gap: 70px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 60px;
+    padding: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.kurser-container {
+    padding-top: 50px;
+
+    display: grid;
+    margin: 0 auto;
+}
+
+
+.kursus-container {
+    display: grid;
+    justify-items: center;
+    padding-top: 50px;
+    padding-bottom: 100px;
+
+}
+
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+
+
+input[type=text] {
+    width: 500px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 2px solid #262420;
+    resize: vertical;
+    font-size: 1em;
+}
+
+textarea {
+    width: 500px;
+    height: 200px;
+    border: 2px solid #262420;
+    resize: vertical;
+    padding: 10px;
+    font-size: 1em;
+
+}
+
+input[type=submit] {
+    width: 100px;
+    height: 50px;
+    border-radius: 3px;
+    box-shadow: none;
+    background-color: #59514d;
+    color: whitesmoke;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #262420;
+}
+
+@media screen and (max-width: 600px) {
+
+    input[type=text],
+    textarea,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+
+input[type=submit]:hover {
+    background-color: #262420;
+}
+
+@media screen and (max-width: 600px) {
+
+    input[type=text],
+    textarea {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+/*Kurser slut*/
+
+
+/*Lene Hansen*/
+#underside-splash-container {
+    height: 70vh;
+}
+
+.underside-header-overlay {
+    height: 70vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(89, 81, 77, 0.82);
+    z-index: -1;
+    opacity: 0.55;
+}
+
+.underside-splash-content {
+    height: 35vh;
+
+
+}
+
+
+.fullscreen-photo-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    z-index: -2;
+    background-color: rgba(121, 188, 226, 0.5);
+}
+
+.fullscreen-photo-wrap img {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#om-cv-container {
+    display: grid;
+    padding-top: 100px;
+}
+
+#om-cv-container .om-tekst {
+    font-size: 1.4em;
+    font-weight: 400;
+    max-width: 800px;
+    padding-left: 55px;
+    padding-right: 55px;
+    line-height: 1.7;
+
+}
+
+#om-cv-container .cv-tekst {
+    font-size: 1.4em;
+    font-weight: 400;
+    max-width: 800px;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+
+.cv-tekst h1 {
+    font-size: 2em
+}
+
+#om-cv-container .top {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    justify-items: center;
+    align-items: center;
+}
+
+#om-cv-container .bottom {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    padding-top: 150px;
+    /*    grid-area: */
+}
+
+#om-cv-container img {
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+}
+
+#kontakt-container {
+    display: grid;
+    justify-items: center;
+}
+
+.cv-tekst {
+    display: flex;
+    align-items: center;
+}
+
+.cv-tekst ul {
+    list-style: none;
+    display: grid;
+
+}
+
+.cv-tekst ul {
+    line-height: 2;
+
+}
+
+#kontakt-container {
+    display: grid;
+    justify-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#kontakt-container h1 {
+    font-size: 2.6em;
+}
+
+.cv label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+
+input[type=text] {
+    width: 500px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 2px solid #262420;
+    resize: vertical;
+    font-size: 1em;
+}
+
+textarea {
+    width: 500px;
+    height: 200px;
+    border: 2px solid #262420;
+    resize: vertical;
+    padding: 10px;
+    font-size: 1em;
+
+}
+
+input[type=submit] {
+    width: 100px;
+    height: 50px;
+    border-radius: 3px;
+    /*            box-shadow: none;*/
+    background-color: #59514d;
+    color: whitesmoke;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #262420;
+}
+
+@media screen and (max-width: 600px) {
+
+    input[type=text],
+    textarea {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+/*Lene Hansen slut*/
+
 /*Media*/
 
 
@@ -1186,7 +1802,7 @@ body.light .progress-wrap svg.progress-circle path {
 @media only screen and (max-width: 376px) {
     #info-container .content p {
         font-size: 1.5em;
-        width: 300;
+        width: 300px;
     }
 
     #info-container .content {

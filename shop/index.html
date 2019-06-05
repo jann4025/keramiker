@@ -16,140 +16,6 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v0.0.4/css/unicons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        .tekst {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 10px;
-            font-size: 1.3em;
-            padding-top: 3%;
-            text-align: center;
-        }
-
-        .tekst h3 {
-            font-weight: 200;
-        }
-
-        .produkter-container {
-            max-width: 1200px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            padding-bottom: 50px;
-            margin: 100px auto;
-            grid-gap: 50px;
-
-        }
-
-        .produkt {
-            margin-bottom: 50px;
-            overflow: hidden;
-        }
-
-        .se_mere {
-            display: none;
-            position: absolute;
-            width: 100px;
-            height: 50px;
-            border-radius: 3px;
-            box-shadow: none;
-            background-color: #59514d;
-            color: whitesmoke;
-            font-size: 1.2em;
-            border: none;
-            margin-top: 125px;
-            margin-left: 125px;
-            z-index: 99;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        .se_mere:hover {
-            background-color: #262420;
-            cursor: pointer;
-        }
-
-        .zoom {
-            max-height: 300px;
-            max-width: 350px;
-            overflow: hidden
-        }
-
-        .produkt img:hover {
-            cursor: pointer;
-            transform: scale(1.2);
-        }
-
-        .produkt:hover .se_mere {
-            display: block;
-            transition: .3s ease;
-            opacity: 1;
-
-        }
-
-        .produkt h1 {
-            font-size: 25px;
-        }
-
-        .produkt img {
-            max-height: 300px;
-            max-width: 350px;
-            transition: transform .5s ease;
-        }
-
-        .produkter-container img {
-            width: 100%;
-            height: 100%;
-        }
-
-        #underside-splash-container {
-            height: 70vh;
-        }
-
-        .underside-header-overlay {
-            height: 70vh;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: rgba(89, 81, 77, 0.82);
-            z-index: -1;
-            opacity: 0.55;
-        }
-
-        .underside-splash-content {
-            height: 35vh;
-
-
-        }
-
-
-        .fullscreen-photo-wrap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 70vh;
-            overflow: hidden;
-            z-index: -2;
-            background-color: rgba(121, 188, 226, 0.5);
-        }
-
-        .fullscreen-photo-wrap img {
-
-            min-width: 100%;
-            min-height: 100%;
-        }
-
-
-        @media only screen and (max-width: 833px) {
-            .produkter-container {
-                grid-template-columns: 1fr 1fr;
-                max-width: 700px;
-                margin: 0 auto;
-
-
-            }
-        }
-
     </style>
 </head>
 
@@ -178,7 +44,7 @@
 
         <div class=" knap">
             <i class='uil uil-bars'></i>
-            <a href="index.html" id="logonav"><img id="logonav" src="../lene_white.png" alt=""></a>
+            <a href="index.html" class="logonav"><img class="logonav" src="../lene_white.png" alt=""></a>
             <img src="../hvid_kurv.svg" class="kurv" alt="">
         </div>
 
@@ -212,8 +78,8 @@
         </section>
 
 
-        <div class="tekst" data-aos="fade-up" data-aos-duration="3000">
-            <p class="infclass=" nav-item" o_tekst"></p>
+        <div class="shop_tekst" data-aos="fade-up" data-aos-duration="3000">
+            <p></p>
         </div>
 
 
@@ -318,8 +184,5 @@
             });
 
         })(jQuery);
-
     </script>
-</body>
-
-</html>
+</body></html>
