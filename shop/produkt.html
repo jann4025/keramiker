@@ -31,7 +31,13 @@
             <a href="index.html">SHOP</a>
             <a href="../galleri">GALLERI</a>
             <a href="../kurser">KURSER</a>
-            <a href="../lene-hansen">OM</a>
+            <div class="dropdown">
+                <a class="nav-item" href="lene-hansen">OM</a>
+                <div class="dropdown-content">
+                    <a href="lene-hansen#om-cv-container">Lene Hansen</a>
+                    <a href="lene-hansen#kontakt-container">Kontakt</a>
+                </div>
+            </div>
             <a href="" id="kurv">
                 <img src="../hvid_kurv.svg" id="kurv" alt="">
                 <span id="kurv1"></span>
@@ -138,9 +144,6 @@
         let dest = document.querySelector(".singleview"); /* Variabel hvor vi angiver hvor vores inhold skal placeres i html */
         let temp = document.querySelector(".temp"); /* Varibel hvor vi angiver hvilken template funktionen skal bruge i html */
         let sejt = 1;
-
-
-
         document.addEventListener("DOMContentLoaded", start); /* Tilføjer en Eventlistener som skal sikre at vores html (DOM) er loadet inden vi kalder på start funktionen */
 
 
@@ -203,18 +206,38 @@
             }
 
 
+            <<
+            << << < HEAD
 
+                ===
+                === = <<
+                <<
+                <<
+                <
+                HEAD >>>
+                >>> > a1fd1ab776836737a1f371c0237bbd6c3d2d5f3d
             getJson(); /* Kalder funktionen som skal hente vores indhold */
             back(); /* Kalder tage os tilbage til den side man kom fra */
         }
 
         function back() {
+            <<
+            << << < HEAD
             document.querySelector(".luk").addEventListener("click", () => {
                 /* Tilføjer en eventlistner der lytter på et click, hvorefter man bliver taget til den skrevne lokation */
                 location.href = "index.html#hertil";
             })
 
-            getJson();
+            getJson(); ===
+            === =
+            document.querySelector(".luk").addEventListener("click", () => {
+                    /* Tilføjer en eventlistner der lytter på et click, hvorefter man bliver taget til den skrevne lokation */
+                    location.href = "index.html#hertil";
+                }) ===
+                ===
+                =
+                getJson(); >>>
+            >>> > a1fd1ab776836737a1f371c0237bbd6c3d2d5f3d
             back();
 
             function back() {
@@ -223,8 +246,19 @@
                 })
             }
 
+            <<
+            << << < HEAD
 
+                ===
+                === = >>>
+                >>>
+                >
+                origin / master >>>
+                >>> > a1fd1ab776836737a1f371c0237bbd6c3d2d5f3d
         }
+
     </script>
 
-</body></html>
+</body>
+
+</html>
