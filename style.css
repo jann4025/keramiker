@@ -685,7 +685,7 @@ body.light .progress-wrap svg.progress-circle path {
     align-items: center;
     width: 100%;
     margin-top: 10em;
-    margin-bottom: 10em;
+    margin-bottom: 5em;
 }
 
 #info-container .content p {
@@ -701,7 +701,7 @@ body.light .progress-wrap svg.progress-circle path {
 }
 
 .info_tekst2 {
-    margin-top: 2em;
+    margin-top: 5em;
 }
 
 .billeder {
