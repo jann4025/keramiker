@@ -131,6 +131,30 @@ h1 {
     margin-top: 1vw;
 }
 
+
+
+.dropdown-content {
+    width: 300px;
+    height: 0.1px;
+    display: none;
+    position: absolute;
+    right: 24.8em;
+    margin-top: 20px
+}
+
+.dropdown-content a {
+    display: block;
+    float: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropdown-content a {
+    display: block;
+}
+
 .desktop-nav {
     position: fixed;
     top: 0;
@@ -144,9 +168,10 @@ h1 {
 
 .desktop-nav a {
     float: left;
-    margin-left: 11em;
+    display: block;
     text-decoration: none;
     font-weight: 700;
+    margin-left: 11em;
     font-size: 1.1em;
     color: whitesmoke;
 }
