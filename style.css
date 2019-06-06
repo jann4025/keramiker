@@ -90,6 +90,66 @@ font-weight: 700;
 font-style: italic;
 */
 
+/*Logo animation*/
+
+.animation-container {
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background-color: #262420;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+}
+
+
+.animate {
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+    animation-iteration-count: infinite;
+    animation: skriv 4s ease;
+    animation-fill-mode: both;
+    /*    animation-iteration-count: infinite;*/
+    stroke-width: 31.7px;
+    stroke: #ffffff;
+}
+
+.fade {
+    animation: fade .8s;
+    animation-fill-mode: both;
+}
+
+#Lag_1 {
+    width: 100%;
+    max-width: 1000px;
+}
+
+@keyframes skriv {
+    0% {}
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+/*Logo animation slut*/
+
 
 html {
     scroll-behavior: smooth;
@@ -130,9 +190,10 @@ h1 {
     width: 100px;
     padding: 0;
     margin: 0;
-    max-width: 80px;
+    max-width: 90px;
     padding-left: 1em;
 }
+
 
 .logonav {
     width: 100px;
@@ -176,7 +237,7 @@ h1 {
     width: 100%;
     max-width: 100vw;
     text-align: center;
-    z-index: 999;
+    z-index: 998;
 
 }
 
@@ -272,6 +333,14 @@ i {}
     float: right;
 }
 
+.cv-tekst {
+    grid-area: "tekst";
+}
+
+.cv-billede {
+    grid-area: "billede";
+}
+
 .mobile-nav {
     position: fixed;
     top: 0;
@@ -283,6 +352,7 @@ i {}
     background-color: rgba(89, 81, 77);
     opacity: 1;
     transition: .3s;
+    overflow: scroll;
 }
 
 
@@ -378,6 +448,22 @@ footer.bottom i {
     font-size: 1em;
 }
 
+.link-semere {
+    text-align: center;
+}
+
+.link-semere a {
+    border-radius: .1em;
+    font-weight: 700;
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: #59514d;
+    padding-bottom: .5em;
+    padding-top: .5em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
 footer h3 {
     font-size: 1.5em;
     ;
@@ -399,7 +485,6 @@ footer h3 {
     display: none;
 
 }
-
 
 /*Progressbar*/
 .progress-wrap {
@@ -747,7 +832,7 @@ body.light .progress-wrap svg.progress-circle path {
 }
 
 #kurser-container {
-    max-width: 100vw;
+    max-width: 100%;
     height: 30em;
     display: grid;
     align-items: center;
@@ -843,20 +928,42 @@ body.light .progress-wrap svg.progress-circle path {
     min-height: 30em;
 }
 
+#flakkebjerg-container-mobile {
+    max-width: 100vw;
+    height: auto;
+    display: none;
+    align-items: center;
+    justify-items: center;
+    margin-top: 3em;
+    min-height: 30em;
+}
+
 #flakkebjerg-container .content {
-    width: 70%;
+    width: 80%;
     color: whitesmoke;
 
 }
 
-#flakkebjerg-container .content h1 {
+#flakkebjerg-container-mobile .content {
+    width: 90%;
+}
+
+#flakkebjerg-container .content h1,
+#flakkebjerg-container-mobile .content h1 {
     font-size: 4em;
     font-weight: 700;
 }
 
-#flakkebjerg-container .content p {
+#flakkebjerg-container .content p,
+#flakkebjerg-container-mobile .content p {
     font-size: 1.4em;
     font-weight: 400;
+}
+
+
+#flakkebjerg-container-mobile img {
+    width: 90%;
+    margin-top: 2em;
 }
 
 
@@ -1012,7 +1119,13 @@ body.light .progress-wrap svg.progress-circle path {
     width: 90px;
     /*    padding-left: 50px;*/
     font-weight: 700;
+    color: black;
 }
+
+.produkt a {
+    text-decoration: none;
+}
+
 
 .luk p {
     display: inline-block;
@@ -1511,15 +1624,22 @@ input[type=submit]:hover {
 }
 
 #om-cv-container .top {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
 }
 
 #om-cv-container .bottom {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-areas: 1fr 1fr;
     padding-top: 150px;
+    justify-items: center;
+    align-items: center;
     /*    grid-area: */
+}
+
+#om-cv-container .bottom a {
+    color: black;
+    text-decoration: none;
 }
 
 #om-cv-container img {
@@ -1554,11 +1674,42 @@ input[type=submit]:hover {
 
 #kontakt-container h1 {
     font-size: 2.6em;
+
 }
 
 .aabningstider p {
-    max-width: 400px;
-    font-size: 1.5em;
+
+    font-size: 1.4em;
+    font-weight: 400;
+    max-width: 800px;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+
+
+
+.aabningstider h1 {
+    font-size: 2em;
+    padding-left: 55px;
+}
+
+.aabningstider_h1 {
+    margin-top: 1.2em;
+}
+
+.aabningstider {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding-left: 13px;
+    padding-right: 13px;
+
+    margin-top: 13em;
+}
+
+.aabningstider img {
+    width: 100%;
+    max-width: 600px;
 }
 
 .kontakt-teskt ul {
@@ -1852,10 +2003,63 @@ input[type=submit]:hover {
         grid-template-columns: 1fr;
     }
 
+    .aabningstider {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+
+    .aabningstider,
+    #om-cv-container .top,
+    #om-cv-container .bottom {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    #om-cv-container .om-tekst,
+    #om-cv-container .cv-tekst {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .aabningstider p,
+    .aabningstider h1 {
+        padding-left: 20px;
+    }
+
+    .aabningstider {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+
+
 
 }
 
 @media only screen and (max-width: 768px) {
+    .animated {
+        /*CSS transitions*/
+        -o-transition-property: none !important;
+        -moz-transition-property: none !important;
+        -ms-transition-property: none !important;
+        -webkit-transition-property: none !important;
+        transition-property: none !important;
+        /*CSS transforms*/
+        -o-transform: none !important;
+        -moz-transform: none !important;
+        -ms-transform: none !important;
+        -webkit-transform: none !important;
+        transform: none !important;
+        /*CSS animations*/
+        -webkit-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        -ms-animation: none !important;
+        animation: none !important;
+    }
+
+
     .desktop-nav {
         display: none;
     }
@@ -1885,12 +2089,19 @@ input[type=submit]:hover {
     #flakkebjerg-container {
         padding-bottom: 2em;
         padding-top: 2em;
+        display: none;
     }
 
-    #flakkebjerg-container > div > p {
+    #flakkebjerg-container-mobile {
+        display: grid;
+    }
+
+    #flakkebjerg-container > div > p,
+    #flakkebjerg-container-mobile > div > p {
         text-align: left !important;
 
     }
+
 
 
 }
@@ -1984,7 +2195,9 @@ input[type=submit]:hover {
 }
 
 @media only screen and (max-width: 426px) {
-    #flakkebjerg-container .content h1 {
+
+    #flakkebjerg-container .content h1,
+    #flakkebjerg-container-mobile .content h1 {
         font-size: 3em;
     }
 
@@ -1992,6 +2205,13 @@ input[type=submit]:hover {
         padding-left: 0;
         padding-right: 0;
     }
+
+    .intro .tekst h1 {
+        text-align: left;
+        margin-left: .2em;
+    }
+
+
 }
 
 @media only screen and (max-width: 376px) {
@@ -2026,14 +2246,31 @@ input[type=submit]:hover {
         text-align: center;
     }
 
-    #flakkebjerg-container .content {
-        width: 95%;
+    #flakkebjerg-container-mobile .content,
+    #flakkebjerg-container-mobile .content img {
+        width: 80%;
 
     }
 
     .header-content h1 {
         font-size: 2em;
     }
+
+    .info p,
+    .tilmelding h1 {
+        font-size: .7em;
+    }
+
+    .billede p {
+        font-size: 1.3em;
+    }
+
+    .kursus .billede {
+        height: auto;
+        padding-top: 1em;
+        padding-bottom: 1.5em;
+    }
+
 
 }
 
@@ -2076,6 +2313,15 @@ input[type=submit]:hover {
 
     .produkt h1 {
         text-align: center;
+    }
+
+    #flakkebjerg-container-mobile .content h1 {
+        font-size: 2.2em;
+        text-align: left;
+    }
+
+    .instagram-container .content h1 {
+        font-size: 2.2em;
     }
 }
 

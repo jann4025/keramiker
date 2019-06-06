@@ -4,17 +4,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keramiker Lene Hansen</title>
+    <title>Keramiker Lene Hansen | SHOP</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://use.typekit.net/tsq8cuj.css">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    <meta name="keywords" content="Keramik vaser, Keramik krus, Keramik skål, Glasur, Keramik Kursus, Kunsthåndværk, Dansk Keramik, Kunst online, Indretning af stue, Raku">
+    <meta name="description" content="På min webshop har du mulighed for at købe nogle af mine værker. Hvis du ikke finder, hvad du søger, så besøg mig i min butik. Her tilbyder jeg et bredere sortiment med flere forskellige værker, idet jeg dagligt laver nyt spændende keramik. 
+Det er også muligt for dig at lave specialbestillinger. Så hvis du ønsker et unikt kunsthåndværk med dit eget præg, kan du udfylde formularen på siden ‘Om Lene Hansen’, eller kontakt mig pr. telefon 22145013. 
+">
     <meta property="og:title" content="Keramiker Lene Hansen">
     <meta property="og:type" content="website">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v0.0.4/css/unicons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -26,7 +35,7 @@
     <header>
         <!--Desktop navigation skjules på mobile (breakpoint: max 700px)-->
         <nav class="desktop-nav">
-            <a href="../index.html"><img id="logo" src="../lene_white.png" alt=""></a>
+            <a href="../index.html" id="logo"><img id="logo" src="../lene_white.png" alt=""></a>
             <!--           <a href="#">FORSIDE</a>-->
             <a class="active" href="#">SHOP</a>
             <a class="nav-item" href="../galleri">GALLERI</a>
@@ -38,7 +47,7 @@
                     <a href="../lene-hansen#kontakt-container">Kontakt</a>
                 </div>
             </div>
-            <a href="" id="kurv">
+            <a href="../kurv/" id="kurv">
                 <img src="../hvid_kurv.svg" id="kurv" alt="">
                 <span id="kurv1"></span>
 
@@ -49,7 +58,11 @@
         <div class="knap">
             <i class='uil uil-bars'></i>
             <a href="../index.html" class="logonav"><img class="logonav" src="../lene_white.png" alt=""></a>
-            <img src="../hvid_kurv.svg" class="kurv" alt="">
+            <a href="../kurv/" class="kurv">
+                <img src="../hvid_kurv.svg" id="kurv" alt="">
+                <span id="kurv1"></span>
+
+            </a>
         </div>
 
         <nav class="mobile-nav hide-mobile-nav">
@@ -82,12 +95,12 @@
         </section>
 
 
-        <div class="shop_tekst" data-aos="fade-up" data-aos-duration="3000">
+        <div class="shop_tekst">
             <p></p>
         </div>
 
 
-        <div class="produkter-container" id="hertil" data-aos="fade-up" data-aos-duration="1000">
+        <div class="produkter-container" id="hertil">
         </div>
 
         <template>
@@ -111,6 +124,15 @@
 
     <footer>
         <div class="top">
+            <div class="noget-andet">
+
+            </div>
+            <div class="open-hours">
+
+
+
+
+            </div>
             <div class="link">
                 <a class="" href="../shop">SHOP</a>
                 <a class="" href="../galleri">GALLERI</a>
@@ -120,18 +142,11 @@
                 <a class="" href="../lene-hansen#om-cv-container">LENE HANSEN</a>
                 <a href="../lene-hansen#kontakt-container">KONTAKT</a>
             </div>
-            <div class="open-hours">
 
 
 
 
-            </div>
 
-
-
-            <div class="noget-andet">
-
-            </div>
         </div>
         <div class="bottom">
             <a class="facebook" href=""><i class="fab fa-facebook-square"></i></a>
@@ -191,5 +206,8 @@
             });
 
         })(jQuery);
+
     </script>
-</body></html>
+</body>
+
+</html>
