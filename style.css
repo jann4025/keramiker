@@ -107,7 +107,7 @@ body {
     font-family: futura-pt, sans-serif;
     margin: 0;
     padding: 0;
-    user-select: none;
+    /*    user-select: none;*/
     /*    border: red 1px solid;*/
 }
 
@@ -1555,6 +1555,22 @@ input[type=submit]:hover {
 #kontakt-container h1 {
     font-size: 2.6em;
 }
+
+.aabningstider p {
+    max-width: 400px;
+    font-size: 1.5em;
+}
+
+.kontakt-teskt ul {
+    list-style: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
 
 .cv label {
     padding: 12px 12px 12px 0;
